@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ArrowVec : MonoBehaviour
 {
-	[SerializeField] GameObject player_dice;
+	[SerializeField]
+	GameObject player_dice = default;
 	ThrowDice _throwDice;
 
     // Start is called before the first frame update

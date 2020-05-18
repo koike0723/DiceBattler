@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9092560170146435679}
   - component: {fileID: 9092560170146435672}
   m_Layer: 0
-  m_Name: dice
+  m_Name: player_dice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.001
+  m_Mass: 0.005
   m_LinearDrag: 3
   m_AngularDrag: 3
   m_GravityScale: 0
@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645f1f87e3a619947843b093a61b608b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swipeVec: {x: 0, y: 0}
   move_val: 30
   min_pow: 0.1
   max_pow: 5

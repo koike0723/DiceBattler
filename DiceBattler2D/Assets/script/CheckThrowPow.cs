@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class CheckThrowPow : MonoBehaviour
 {
 	[SerializeField]
-	GameObject player_dice;
+	GameObject player_dice = default;
 	[SerializeField]
-	GameObject pow_gauge;
+	GameObject pow_gauge = default;
 
 	ThrowDice _throwDice;
 	Slider _slider;

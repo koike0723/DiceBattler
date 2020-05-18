@@ -15,14 +15,31 @@ public class ThrowDice : MonoBehaviour
 	private Vector2 touchNowPos;
 	public Vector2 swipeVec;
 	//スワイプ判定の基準値
-	[SerializeField] private float move_val = 30.0f;
+	[SerializeField]
+	private float move_val = 30.0f;
 
 	//投擲パワー最低値
 	public float min_pow = 0.5f;
 	//投擲パワー最大値
 	public float max_pow = 3.0f;
 	//パワーの上昇値
-	[SerializeField] private float pow_up_val = 0.1f;
+	[SerializeField]
+	private float pow_up_val = 0.1f;
+
+	//高速度基準値
+	[SerializeField]
+	private float high_verocity_val = 5.0f;
+	//低速度基準値
+	[SerializeField]
+	private float low_verocity_val = 0.0005f;
+	//高速面変化フレーム
+	[SerializeField]
+	private int frame_num_high = 15;
+	//低速面変化フレーム
+	[SerializeField]
+	private int frame_num_low = 100;
+	
+
 	//パワーゲージの最大値を超えたか判定用
 	private bool up_flg = true;
 	//投擲パワー値
@@ -58,29 +75,31 @@ public class ThrowDice : MonoBehaviour
 
 		//フリック処理
 		Flick();
+
 	}
 
 	//サイコロの面番号をランダムに生成
 	public int CreateElementNum()
 	{
 		frame_cnt += 1;
-		if (_rigdbody2D.velocity.magnitude > 10 || Input.GetKey(KeyCode.Mouse0))
+		if (_rigdbody2D.velocity.magnitude > high_verocity_val || Input.GetKey(KeyCode.Mouse0))
 		{
-			if (frame_cnt % 15 == 0)
+			if (frame_cnt % frame_num_high == 0)
 			{
-				face_element_num = Random.Range(0, 60) % DiceFace.face_num;
+				face_element_num = Random.Range(0, DiceFace.face_num - 1) % DiceFace.face_num;
 			}
 		}
-		else if (_rigdbody2D.velocity.magnitude > 0)
+		else if (_rigdbody2D.velocity.magnitude > low_verocity_val)
 		{
-			if (frame_cnt % 100 == 0)
+			if (frame_cnt % frame_num_low == 0)
 			{
-				face_element_num = Random.Range(0, 60) % DiceFace.face_num;
+				face_element_num = Random.Range(0, DiceFace.face_num - 1) % DiceFace.face_num;
 			}
 		}
 		else
 		{
 			frame_cnt = 0;
+			_rigdbody2D.velocity = Vector2.zero;
 		}
 
 		return face_element_num;
