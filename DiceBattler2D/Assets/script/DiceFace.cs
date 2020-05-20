@@ -15,12 +15,17 @@ public class DiceFace: MonoBehaviour
 	int[] m_element_val = new int[face_num];
 
 	//表示している面の要素番号
-	private int now_element_num = 0; 
+	private int now_element_num = 0;
+
+	private void Awake()
+	{
+		_spriterender = GetComponent<SpriteRenderer>();
+	}
 
 	// Start is called before the first frame update
 	void Start()
     {
-		_spriterender = GetComponent<SpriteRenderer>();
+		
     }
 
     // Update is called once per frame

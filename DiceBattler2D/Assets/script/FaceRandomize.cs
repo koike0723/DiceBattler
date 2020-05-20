@@ -10,7 +10,7 @@ public class FaceRandomize: MonoBehaviour
     void Start()
     {
 		_diceface = GetComponent<DiceFace>();
-		_diceface.SetSprite(Random.Range(0, DiceFace.face_num - 1));
+		_diceface.SetSprite(Random.Range(0, DiceFace.face_num * 100) % DiceFace.face_num);
     }
 
     // Update is called once per frame

@@ -48,6 +48,7 @@ public class ThrowDice : MonoBehaviour
 	private Transform _transform;
 	private Rigidbody2D _rigdbody2D;
 	private DiceFace _diceface;
+	private AreaCircle _areacircle;
 
 	//サイコロの面番号
 	private int face_element_num = 0;
@@ -61,6 +62,7 @@ public class ThrowDice : MonoBehaviour
 		_transform = GetComponent<Transform>();
 		_rigdbody2D = GetComponent<Rigidbody2D>();
 		_diceface = GetComponent<DiceFace>();
+		_areacircle = GetComponentInChildren<AreaCircle>();
 		//初期化用位置に現在値を入れる
 		init_pos = _transform.position;
 		//投擲パワーを最低値に
@@ -86,14 +88,14 @@ public class ThrowDice : MonoBehaviour
 		{
 			if (frame_cnt % frame_num_high == 0)
 			{
-				face_element_num = Random.Range(0, DiceFace.face_num - 1) % DiceFace.face_num;
+				face_element_num = Random.Range(0, DiceFace.face_num * 100) % DiceFace.face_num;
 			}
 		}
 		else if (_rigdbody2D.velocity.magnitude > low_verocity_val)
 		{
 			if (frame_cnt % frame_num_low == 0)
 			{
-				face_element_num = Random.Range(0, DiceFace.face_num - 1) % DiceFace.face_num;
+				face_element_num = Random.Range(0, DiceFace.face_num * 100) % DiceFace.face_num;
 			}
 		}
 		else
@@ -187,6 +189,7 @@ public class ThrowDice : MonoBehaviour
 									Input.mousePosition.y);
 			
 			ThrowDirection();
+			_areacircle.enabled = true;
 		}
 	}
 
