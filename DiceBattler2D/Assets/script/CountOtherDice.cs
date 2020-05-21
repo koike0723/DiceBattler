@@ -19,16 +19,18 @@ public class CountOtherDice: MonoBehaviour
         
     }
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	public int Count()
 	{
-		if(collision.CompareTag("other_dice"))
+		var clones = GameObject.FindGameObjectsWithTag("other_dice");
+		foreach (var clone in clones)
 		{
 			other_dice_count++;
 			Debug.Log(other_dice_count);
 		}
+		return other_dice_count;
 	}
 
-	private void OnDisable()
+	public void Reset()
 	{
 		other_dice_count = 0;
 	}

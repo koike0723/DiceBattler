@@ -38,17 +38,18 @@ public class ThrowDice : MonoBehaviour
 	//低速面変化フレーム
 	[SerializeField]
 	private int frame_num_low = 100;
-	
+
 
 	//パワーゲージの最大値を超えたか判定用
 	private bool up_flg = true;
 	//投擲パワー値
 	public float throw_pow = 0.0f;
 
-	private Transform _transform;
-	private Rigidbody2D _rigdbody2D;
-	private DiceFace _diceface;
-	private AreaCircle _areacircle;
+	private Transform _transform = default;
+	private Rigidbody2D _rigdbody2D = default;
+	private DiceFace _diceface = default;
+	private GameObject _areacircle = default;
+	private Collider2D _player_dice = default;
 
 	//サイコロの面番号
 	private int face_element_num = 0;
@@ -62,7 +63,8 @@ public class ThrowDice : MonoBehaviour
 		_transform = GetComponent<Transform>();
 		_rigdbody2D = GetComponent<Rigidbody2D>();
 		_diceface = GetComponent<DiceFace>();
-		_areacircle = GetComponentInChildren<AreaCircle>();
+		_areacircle = transform.Find("area_circle").gameObject;
+		_player_dice = GetComponent<Collider2D>();
 		//初期化用位置に現在値を入れる
 		init_pos = _transform.position;
 		//投擲パワーを最低値に
@@ -116,10 +118,10 @@ public class ThrowDice : MonoBehaviour
 	//投擲パワー上昇処理
 	void ThrowPower()
 	{
-		if(up_flg == true)
+		if (up_flg == true)
 		{
 			throw_pow += pow_up_val;
-			if(throw_pow >= max_pow)
+			if (throw_pow >= max_pow)
 			{
 				up_flg = false;
 			}
@@ -127,7 +129,7 @@ public class ThrowDice : MonoBehaviour
 		else
 		{
 			throw_pow -= pow_up_val;
-			if(throw_pow <= min_pow)
+			if (throw_pow <= min_pow)
 			{
 				up_flg = true;
 			}
@@ -149,6 +151,7 @@ public class ThrowDice : MonoBehaviour
 		else
 		{
 			Throw(swipeVec.normalized * throw_pow);
+			_areacircle.GetComponent<Collider2D>().enabled = true;
 		}
 	}
 
@@ -165,14 +168,16 @@ public class ThrowDice : MonoBehaviour
 	//フリック操作処理
 	void Flick()
 	{
-		if(Input.GetKeyDown(KeyCode.Mouse0))
+		if (Input.GetKeyDown(KeyCode.Mouse0))
 		{
+			_areacircle.GetComponent<Collider2D>().enabled = false;
+			_player_dice.isTrigger = true;
 			touchStartPos = new Vector2(Input.mousePosition.x,
 										Input.mousePosition.y);
 			throw_pow = min_pow;
 		}
 
-		if(Input.GetKey(KeyCode.Mouse0))
+		if (Input.GetKey(KeyCode.Mouse0))
 		{
 			touchNowPos = new Vector2(Input.mousePosition.x,
 										Input.mousePosition.y);
@@ -187,10 +192,16 @@ public class ThrowDice : MonoBehaviour
 		{
 			touchEndPos = new Vector2(Input.mousePosition.x,
 									Input.mousePosition.y);
-			
+
 			ThrowDirection();
-			_areacircle.enabled = true;
 		}
 	}
 
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.CompareTag("in_field"))
+		{
+			_player_dice.isTrigger = false;
+		}
+	}
 }

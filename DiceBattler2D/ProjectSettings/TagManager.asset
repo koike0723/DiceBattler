@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - other_dice
+  - in_field
   layers:
   - Default
   - TransparentFX
