@@ -30,16 +30,13 @@ public class AreaCircle : MonoBehaviour
 		{
 			if(_rigidbody2D.velocity.normalized.magnitude == 0)
 			{
-				if(collision.GetComponent<DiceFace>().GetElementVal() ==
-					_diceface.GetElementVal())
+				if(collision.GetComponent<DiceFace>().GetElementVal() == _diceface.GetElementVal() || 
+					collision.GetComponent<ContactDice>().isContact)
 				{
-					collision.GetComponent<SpriteRenderer>().color = Color.yellow;
 					dice_element_val = _diceface.GetElementVal();
 					DeleteDice(collision.gameObject);
 				}
-				
 			}
-			
 		}
 	}
 

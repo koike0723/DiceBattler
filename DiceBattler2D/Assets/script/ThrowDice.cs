@@ -52,6 +52,7 @@ public class ThrowDice : MonoBehaviour
 	private Collider2D _player_dice = default;
 
 	//サイコロの面番号
+	[SerializeField]
 	private int face_element_num = 0;
 	//フレーム数
 	private int frame_cnt = 0;
@@ -144,6 +145,22 @@ public class ThrowDice : MonoBehaviour
 
 		swipeVec = new Vector2(dirX, dirY);
 
+		var axis = Vector2.Angle(transform.right, swipeVec);
+		float rad = default;
+
+		if (axis <= 35.0f)
+		{
+			axis = 35.0f;
+			rad = (axis * Mathf.Deg2Rad);
+			swipeVec = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+		}
+		if(axis >= 155.0f)
+		{
+			axis = 155.0f;
+			rad = (axis * Mathf.Deg2Rad);
+			swipeVec = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+		}
+		
 		if (Mathf.Abs(dirX) < move_val && Mathf.Abs(dirY) < move_val)
 		{
 			ResetDice();
@@ -184,7 +201,23 @@ public class ThrowDice : MonoBehaviour
 			float dirX = touchNowPos.x - touchStartPos.x;
 			float dirY = touchNowPos.y - touchStartPos.y;
 
+			var axis = Vector2.Angle(transform.right, swipeVec);
+			float rad = default;
+
 			swipeVec = new Vector2(dirX, dirY);
+
+			//if (axis <= 35.0f)
+			//{
+			//	axis = 35.0f;
+			//	rad = (axis * Mathf.Deg2Rad);
+			//	swipeVec = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+			//}
+			//if (axis >= 155.0f)
+			//{
+			//	axis = 155.0f;
+			//	rad = (axis * Mathf.Deg2Rad);
+			//	swipeVec = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+			//}
 			ThrowPower();
 		}
 

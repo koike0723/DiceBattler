@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4981393423113604679}
   - component: {fileID: 4981393423113604680}
   - component: {fileID: 4981393423113604681}
+  - component: {fileID: -5487700820625500060}
   m_Layer: 0
   m_Name: 'other_dice '
   m_TagString: other_dice
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 39516445742236537, guid: 8fc4fc51063ae3640987149f6819eeb8, type: 3}
-  m_Color: {r: 0.9811321, g: 0.8107199, b: 0.6247775, a: 1}
+  m_Color: {r: 0.98039216, g: 0.81302154, b: 0.62352943, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -209,3 +210,15 @@ MonoBehaviour:
   low_verocity_val: 0.0005
   frame_num_high: 15
   frame_num_low: 100
+--- !u!114 &-5487700820625500060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4981393423113604682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bf9433dbb4bee4fad1960e5cd40196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
