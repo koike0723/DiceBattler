@@ -1326,6 +1326,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player_dice
       objectReference: {fileID: 0}
+    - target: {fileID: 1574464765535775050, guid: 3adfa65e224b85d4fa0f5fcefbe80484,
+        type: 3}
+      propertyPath: angle_limit_right
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8450628798791012432, guid: 3adfa65e224b85d4fa0f5fcefbe80484,
         type: 3}
       propertyPath: m_LocalPosition.x

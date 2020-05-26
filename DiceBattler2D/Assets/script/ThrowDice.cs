@@ -8,15 +8,23 @@ public class ThrowDice : MonoBehaviour
 	//初期化用位置
 	private Vector2 init_pos = Vector2.zero;
 	//指を置いた位置
-	private Vector2 touchStartPos;
+	private Vector2 touch_start_pos;
 	//指を離した位置
-	private Vector2 touchEndPos;
-
-	private Vector2 touchNowPos;
-	public Vector2 swipeVec;
+	private Vector2 touch_end_pos;
+	//指の現在位置
+	private Vector2 touch_now_pos;
+	//スワイプ方向
+	public Vector2 swipe_vec;
 	//スワイプ判定の基準値
 	[SerializeField]
 	private float move_val = 30.0f;
+	//投擲方向右限界値
+	[SerializeField]
+	private float angle_limit_right = 35.0f;
+	//投擲方向左限界値
+	[SerializeField]
+	private float angle_limit_left = 155.0f;
+	
 
 	//投擲パワー最低値
 	public float min_pow = 0.5f;
@@ -137,39 +145,60 @@ public class ThrowDice : MonoBehaviour
 		}
 	}
 
+	//投擲方向限界設定処理
+	void DirectionLimit(float dirx, float diry)
+	{
+		var vec = new Vector2(dirx, diry);
+		var angle = Vector2.Angle(transform.right, vec);
+		float rad = default;
+
+		if(diry > 0)
+		{
+			swipe_vec = vec;
+			if (angle <= angle_limit_right)
+			{
+				angle = angle_limit_right;
+				rad = (angle * Mathf.Deg2Rad);
+				swipe_vec = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+			}
+			if (angle >= angle_limit_left)
+			{
+				angle = angle_limit_left;
+				rad = (angle * Mathf.Deg2Rad);
+				swipe_vec = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+			}
+		}
+		if(diry == 0 && dirx == 0)
+		{
+			swipe_vec = Vector2.up;
+		}
+	}
+
 	//投擲方向決定処理
 	void ThrowDirection()
 	{
-		float dirX = touchEndPos.x - touchStartPos.x;
-		float dirY = touchEndPos.y - touchStartPos.y;
+		float dir_x = touch_end_pos.x - touch_start_pos.x;
+		float dir_y = touch_end_pos.y - touch_start_pos.y;
 
-		swipeVec = new Vector2(dirX, dirY);
+		DirectionLimit(dir_x,dir_y);
 
-		var axis = Vector2.Angle(transform.right, swipeVec);
-		float rad = default;
-
-		if (axis <= 35.0f)
-		{
-			axis = 35.0f;
-			rad = (axis * Mathf.Deg2Rad);
-			swipeVec = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
-		}
-		if(axis >= 155.0f)
-		{
-			axis = 155.0f;
-			rad = (axis * Mathf.Deg2Rad);
-			swipeVec = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
-		}
-		
-		if (Mathf.Abs(dirX) < move_val && Mathf.Abs(dirY) < move_val)
+		if (dir_y < 0)
 		{
 			ResetDice();
 		}
 		else
 		{
-			Throw(swipeVec.normalized * throw_pow);
-			_areacircle.GetComponent<Collider2D>().enabled = true;
+			if (Mathf.Abs(dir_x) < move_val && Mathf.Abs(dir_y) < move_val)
+			{
+				ResetDice();
+			}
+			else
+			{
+				Throw(swipe_vec.normalized * throw_pow);
+				_areacircle.GetComponent<Collider2D>().enabled = true;
+			}
 		}
+		
 	}
 
 	//サイコロ初期化処理
@@ -180,6 +209,7 @@ public class ThrowDice : MonoBehaviour
 		_rigdbody2D.velocity = Vector2.zero;
 		throw_pow = min_pow;
 		face_element_num = 0;
+		swipe_vec = Vector2.up;
 	}
 
 	//フリック操作処理
@@ -189,41 +219,26 @@ public class ThrowDice : MonoBehaviour
 		{
 			_areacircle.GetComponent<Collider2D>().enabled = false;
 			_player_dice.isTrigger = true;
-			touchStartPos = new Vector2(Input.mousePosition.x,
+			touch_start_pos = new Vector2(Input.mousePosition.x,
 										Input.mousePosition.y);
 			throw_pow = min_pow;
 		}
 
 		if (Input.GetKey(KeyCode.Mouse0))
 		{
-			touchNowPos = new Vector2(Input.mousePosition.x,
+			touch_now_pos = new Vector2(Input.mousePosition.x,
 										Input.mousePosition.y);
-			float dirX = touchNowPos.x - touchStartPos.x;
-			float dirY = touchNowPos.y - touchStartPos.y;
+			float dirX = touch_now_pos.x - touch_start_pos.x;
+			float dirY = touch_now_pos.y - touch_start_pos.y;
 
-			var axis = Vector2.Angle(transform.right, swipeVec);
-			float rad = default;
+			DirectionLimit(dirX, dirY);
 
-			swipeVec = new Vector2(dirX, dirY);
-
-			//if (axis <= 35.0f)
-			//{
-			//	axis = 35.0f;
-			//	rad = (axis * Mathf.Deg2Rad);
-			//	swipeVec = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
-			//}
-			//if (axis >= 155.0f)
-			//{
-			//	axis = 155.0f;
-			//	rad = (axis * Mathf.Deg2Rad);
-			//	swipeVec = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
-			//}
 			ThrowPower();
 		}
 
 		if (Input.GetKeyUp(KeyCode.Mouse0))
 		{
-			touchEndPos = new Vector2(Input.mousePosition.x,
+			touch_end_pos = new Vector2(Input.mousePosition.x,
 									Input.mousePosition.y);
 
 			ThrowDirection();

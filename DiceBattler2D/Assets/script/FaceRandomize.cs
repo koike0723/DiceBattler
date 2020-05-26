@@ -33,6 +33,7 @@ public class FaceRandomize: MonoBehaviour
     {
 		_rigidbody2D = GetComponent<Rigidbody2D>();
 		_diceface = GetComponent<DiceFace>();
+		frame_cnt = 0;
 		is_first = true;
 
 	}
@@ -40,11 +41,11 @@ public class FaceRandomize: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		frame_cnt += 1;
 		if(is_first)
 		{
 			Randomize();
 		}
+		frame_cnt += 1;
 	}
 
 	public void Randomize()
@@ -65,9 +66,12 @@ public class FaceRandomize: MonoBehaviour
 		}
 		else
 		{
-			frame_cnt = 0;
-			_rigidbody2D.velocity = Vector2.zero;
-			is_first = false;
+			if(frame_cnt >= 10)
+			{
+				frame_cnt = 0;
+				_rigidbody2D.velocity = Vector2.zero;
+				is_first = false;
+			}
 		}
 		_diceface.SetSprite(face_element_num);
 	}

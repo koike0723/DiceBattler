@@ -17,6 +17,6 @@ public class ArrowVec : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		transform.rotation = Quaternion.FromToRotation(Vector3.up,_throwDice.swipeVec);
+		transform.rotation = Quaternion.FromToRotation(Vector3.up,_throwDice.swipe_vec);
 	}
 }
