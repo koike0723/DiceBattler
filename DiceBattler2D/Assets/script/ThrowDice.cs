@@ -55,7 +55,7 @@ public class ThrowDice : MonoBehaviour
 
 	private Transform _transform = default;
 	private Rigidbody2D _rigdbody2D = default;
-	private DiceFace _diceface = default;
+	private DiceStatus _diceface = default;
 	private GameObject _areacircle = default;
 	private Collider2D _player_dice = default;
 
@@ -71,13 +71,14 @@ public class ThrowDice : MonoBehaviour
 		//各種コンポーネント取得
 		_transform = GetComponent<Transform>();
 		_rigdbody2D = GetComponent<Rigidbody2D>();
-		_diceface = GetComponent<DiceFace>();
+		_diceface = GetComponent<DiceStatus>();
 		_areacircle = transform.Find("area_circle").gameObject;
 		_player_dice = GetComponent<Collider2D>();
 		//初期化用位置に現在値を入れる
 		init_pos = _transform.position;
 		//投擲パワーを最低値に
 		throw_pow = min_pow;
+
 	}
 
 	// Update is called once per frame
@@ -99,14 +100,14 @@ public class ThrowDice : MonoBehaviour
 		{
 			if (frame_cnt % frame_num_high == 0)
 			{
-				face_element_num = Random.Range(0, DiceFace.face_num * 100) % DiceFace.face_num;
+				face_element_num = Random.Range(0, DiceStatus.face_num * 100) % DiceStatus.face_num;
 			}
 		}
 		else if (_rigdbody2D.velocity.magnitude > low_verocity_val)
 		{
 			if (frame_cnt % frame_num_low == 0)
 			{
-				face_element_num = Random.Range(0, DiceFace.face_num * 100) % DiceFace.face_num;
+				face_element_num = Random.Range(0, DiceStatus.face_num * 100) % DiceStatus.face_num;
 			}
 		}
 		else

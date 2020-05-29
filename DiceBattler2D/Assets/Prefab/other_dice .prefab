@@ -143,6 +143,7 @@ MonoBehaviour:
   - {fileID: -8866378825118310145, guid: 8fc4fc51063ae3640987149f6819eeb8, type: 3}
   - {fileID: -3287765887320952711, guid: 8fc4fc51063ae3640987149f6819eeb8, type: 3}
   m_element_val: 010000000200000003000000040000000500000006000000
+  dice_hp: 0
 --- !u!114 &4981393423113604681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,46 +162,19 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 5
-      outSlope: 5
+      inSlope: 6
+      outSlope: 6
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.1
-      value: 0.5
-      inSlope: -0.023195295
-      outSlope: -0.023195295
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.97833157
-      outWeight: 0.50839645
-    - serializedVersion: 3
-      time: 0.5
-      value: 2.5
-      inSlope: -0.031492114
-      outSlope: -0.031492114
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.7434995
-      outWeight: 0.74891645
-    - serializedVersion: 3
-      time: 0.8
-      value: 4.5
-      inSlope: 0.09369454
-      outSlope: 0.09369454
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.50343096
-      outWeight: 0.5016247
-    - serializedVersion: 3
       time: 1
       value: 6
-      inSlope: 7.5000005
-      outSlope: 7.5000005
+      inSlope: 6
+      outSlope: 6
       tangentMode: 34
-      weightedMode: 1
+      weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
@@ -222,3 +196,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bf9433dbb4bee4fad1960e5cd40196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  is_contact: 0
+  is_stay_area: 0

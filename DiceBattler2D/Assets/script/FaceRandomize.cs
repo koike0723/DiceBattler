@@ -24,7 +24,7 @@ public class FaceRandomize: MonoBehaviour
 	private int face_element_num = 0;
 
 	private Rigidbody2D _rigidbody2D = default;
-	private DiceFace _diceface = default;
+	private DiceStatus _diceface = default;
 
 	private bool is_first = default;
 
@@ -32,7 +32,7 @@ public class FaceRandomize: MonoBehaviour
 	void Start()
     {
 		_rigidbody2D = GetComponent<Rigidbody2D>();
-		_diceface = GetComponent<DiceFace>();
+		_diceface = GetComponent<DiceStatus>();
 		frame_cnt = 0;
 		is_first = true;
 
