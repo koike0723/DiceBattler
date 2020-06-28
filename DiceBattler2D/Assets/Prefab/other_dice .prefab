@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4981393423113604682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.84, y: 2.1, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -144,6 +144,8 @@ MonoBehaviour:
   - {fileID: -3287765887320952711, guid: 8fc4fc51063ae3640987149f6819eeb8, type: 3}
   m_element_val: 010000000200000003000000040000000500000006000000
   dice_hp: 0
+  hp_max: 100
+  atk: 5
 --- !u!114 &4981393423113604681
 MonoBehaviour:
   m_ObjectHideFlags: 0

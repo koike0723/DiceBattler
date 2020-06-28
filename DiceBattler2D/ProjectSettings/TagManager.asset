@@ -49,3 +49,6 @@ TagManager:
   - name: tab
     uniqueID: 3279984129
     locked: 0
+  - name: BlackScreen
+    uniqueID: 1982499349
+    locked: 0

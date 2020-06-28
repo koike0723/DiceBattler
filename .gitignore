@@ -39,3 +39,10 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+/DiceBattler2D/Assets/Gizmos
+/DiceBattler2D/Assets/PlayMaker
+/DiceBattler2D/Assets/Plugins/PlayMaker
+/DiceBattler2D/Assets/Plugins/PlayMaker.meta
+/DiceBattler2D/Assets/Plugins.meta
+/DiceBattler2D/Assets/Gizmos.meta
+/DiceBattler2D/Assets/PlayMaker.meta
