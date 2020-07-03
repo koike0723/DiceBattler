@@ -201,8 +201,10 @@ GameObject:
   - component: {fileID: 3053205601509072579}
   - component: {fileID: 3053205601509072581}
   - component: {fileID: 3053205601509072580}
+  - component: {fileID: 7961682957763980143}
+  - component: {fileID: 124144706508626856}
   m_Layer: 0
-  m_Name: other_dice_counter
+  m_Name: other_dice_manager
   m_TagString: in_field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,3 +263,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   other_dice_count: 0
+--- !u!114 &7961682957763980143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3053205601509072578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718241b9389e4b9449ea9ce96fed1352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _other_dice_prefab: {fileID: 4981393423113604682, guid: de69165d8404d4a46ace16da5c5d9eda,
+    type: 3}
+  _other_dice_counter: {fileID: 0}
+  curve_x:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curve_y:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curve_pow:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  set_dice_max: 5
+--- !u!114 &124144706508626856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3053205601509072578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4785406361d55914cadcdd4de2aa48d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batle_state_machine: {fileID: 0}
+  FSM_reference_name: 
+  variavle_name: 

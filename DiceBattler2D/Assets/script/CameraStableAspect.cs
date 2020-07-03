@@ -22,7 +22,7 @@ public class CameraStableAspect : MonoBehaviour
 
 	private void Awake()
 	{
-		if(ref_camera == null)
+		if (ref_camera == null)
 		{
 			ref_camera = GetComponent<Camera>();
 		}
@@ -32,8 +32,8 @@ public class CameraStableAspect : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        
-    }
+		
+	}
 
     // Update is called once per frame
     void Update()

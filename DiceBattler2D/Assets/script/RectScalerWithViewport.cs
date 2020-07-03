@@ -24,7 +24,7 @@ public class RectScalerWithViewport : MonoBehaviour
 
 	private void Awake()
 	{
-		if(ref_rect == null)
+		if (ref_rect == null)
 		{
 			ref_rect = GetComponent<RectTransform>();
 		}
@@ -34,8 +34,8 @@ public class RectScalerWithViewport : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        
-    }
+		
+	}
 
     // Update is called once per frame
     void Update()

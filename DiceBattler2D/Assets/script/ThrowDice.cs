@@ -58,6 +58,7 @@ public class ThrowDice : MonoBehaviour
 	private DiceStatus _diceface = default;
 	private GameObject _areacircle = default;
 	private Collider2D _player_dice = default;
+	private CheckThrowingDice _check_throwing;
 
 	//サイコロの面番号
 	[SerializeField]
@@ -65,8 +66,8 @@ public class ThrowDice : MonoBehaviour
 	//フレーム数
 	private int frame_cnt = 0;
 
-	// Start is called before the first frame update
-	void Start()
+
+	private void Awake()
 	{
 		//各種コンポーネント取得
 		_transform = GetComponent<Transform>();
@@ -74,11 +75,21 @@ public class ThrowDice : MonoBehaviour
 		_diceface = GetComponent<DiceStatus>();
 		_areacircle = transform.Find("area_circle").gameObject;
 		_player_dice = GetComponent<Collider2D>();
+		_check_throwing = GetComponent<CheckThrowingDice>();
 		//初期化用位置に現在値を入れる
 		init_pos = _transform.position;
 		//投擲パワーを最低値に
 		throw_pow = min_pow;
+	}
+	// Start is called before the first frame update
+	void Start()
+	{
+	}
 
+	private void OnEnable()
+	{
+		//フリック処理(スクリプト有効化時クリック位置取得)
+		Flick();
 	}
 
 	// Update is called once per frame
@@ -86,10 +97,13 @@ public class ThrowDice : MonoBehaviour
 	{
 		//サイコロの面番号から表示する画像を選択
 		_diceface.SetSprite(CreateElementNum());
-
 		//フリック処理
 		Flick();
+	}
 
+	private void FixedUpdate()
+	{
+		
 	}
 
 	//サイコロの面番号をランダムに生成
@@ -122,7 +136,9 @@ public class ThrowDice : MonoBehaviour
 	//投擲処理
 	public void Throw(Vector2 dir)
 	{
-		_rigdbody2D.AddForce(dir);
+		_rigdbody2D.AddForce(dir, ForceMode2D.Impulse);
+		_check_throwing.SetVariable(VariavleName.isThrow);
+
 	}
 
 	//投擲パワー上昇処理
@@ -183,7 +199,7 @@ public class ThrowDice : MonoBehaviour
 
 		DirectionLimit(dir_x,dir_y);
 
-		if (dir_y < 0)
+		if (dir_y <= 0)
 		{
 			ResetDice();
 		}
@@ -211,6 +227,7 @@ public class ThrowDice : MonoBehaviour
 		throw_pow = min_pow;
 		face_element_num = 0;
 		swipe_vec = Vector2.up;
+		_check_throwing.SetVariable(VariavleName.isCancel);
 	}
 
 	//フリック操作処理
@@ -245,7 +262,8 @@ public class ThrowDice : MonoBehaviour
 			ThrowDirection();
 		}
 	}
-
+	
+	//フィールド内に入る時自身のtrigger判定を解除
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.CompareTag("in_field"))

@@ -6,8 +6,6 @@ public class GenerateDice : MonoBehaviour
 {
 	[SerializeField]
 	private GameObject _other_dice_prefab = default;
-	[SerializeField]
-	private GameObject _other_dice_counter = default;
 
 	private CountOtherDice _count = default;
 
@@ -25,13 +23,18 @@ public class GenerateDice : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-		_count = _other_dice_counter.GetComponent<CountOtherDice>();
+		_count = GetComponent<CountOtherDice>();
+		
+	}
+
+	private void OnEnable()
+	{
 		Generate(set_dice_max);
 		Throw();
 	}
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
 		{
@@ -80,7 +83,7 @@ public class GenerateDice : MonoBehaviour
 			pos.y = CurveWaighteRandom(curve_y) - now_pos.y;
 			dir = pos;
 			throw_pow = CurveWaighteRandom(curve_pow);
-			clone.GetComponent<Rigidbody2D>().AddForce(dir.normalized * throw_pow);
+			clone.GetComponent<Rigidbody2D>().AddForce(dir.normalized * throw_pow, ForceMode2D.Impulse);
 		}
 	}
 
