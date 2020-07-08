@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class ArrowVec : MonoBehaviour
 {
-	[SerializeField]
-	GameObject player_dice = default;
-	ThrowDice _throwDice;
+	private GameObject _PlayerDice = default;
+	private ThrowDice _throwDice;
 
     // Start is called before the first frame update
     void Start()
     {
-		_throwDice = player_dice.GetComponent<ThrowDice>();
+        _PlayerDice = GameObject.FindGameObjectWithTag("Player");
+		_throwDice = _PlayerDice.GetComponent<ThrowDice>();
     }
 
     // Update is called once per frame
     void Update()
     {
-		transform.rotation = Quaternion.FromToRotation(Vector3.up,_throwDice.swipe_vec);
+		transform.rotation = Quaternion.FromToRotation(Vector3.up,_throwDice.swipeVec);
 	}
 }

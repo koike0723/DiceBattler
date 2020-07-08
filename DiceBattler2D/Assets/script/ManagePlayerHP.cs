@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class ManagePlayerHP : MonoBehaviour
 {
-	[SerializeField]
-	private GameObject player_dice = default;
+	private GameObject _PlayerDice = default;
 
 	private DiceStatus _dice_status= default;
 	private Slider _slider = default;
@@ -14,7 +13,8 @@ public class ManagePlayerHP : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-		_dice_status = player_dice.GetComponent<DiceStatus>();
+		_PlayerDice = GameObject.FindGameObjectWithTag("Player");
+		_dice_status = _PlayerDice.GetComponent<DiceStatus>();
 		_slider = GetComponent<Slider>();
     }
 

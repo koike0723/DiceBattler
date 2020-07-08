@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class ManagePow : MonoBehaviour
 {
-	[SerializeField]
-	private GameObject player_dice = default;
+	private GameObject _PlayerDice = default;
 
-	private ThrowDice _throw_dice = default;
+	private ThrowDice _throwDice = default;
 	private Slider _slider = default;
 
     // Start is called before the first frame update
     void Start()
     {
-		_throw_dice = player_dice.GetComponent<ThrowDice>();
+		_PlayerDice = GameObject.FindGameObjectWithTag("Player");
+		_throwDice = _PlayerDice.GetComponent<ThrowDice>();
 		_slider = GetComponent<Slider>();
     }
 
@@ -22,8 +22,8 @@ public class ManagePow : MonoBehaviour
     void Update()
     {
 		//投擲パワー値をスライダーに表示するための処理
-		_slider.maxValue = _throw_dice.max_pow;
-		_slider.minValue = _throw_dice.min_pow;
-		_slider.value = _throw_dice.throw_pow;
+		_slider.maxValue = _throwDice.maxPow;
+		_slider.minValue = _throwDice.minPow;
+		_slider.value = _throwDice.thorowPow;
     }
 }

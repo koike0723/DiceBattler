@@ -18,8 +18,6 @@ public class GenerateDice : MonoBehaviour
 	public int set_dice_max = 5;
 	private int other_dice_num = 0;
 
-	
-
 	// Start is called before the first frame update
 	void Start()
     {

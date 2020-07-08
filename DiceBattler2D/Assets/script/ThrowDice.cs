@@ -8,31 +8,54 @@ public class ThrowDice : MonoBehaviour
 	//初期化用位置
 	private Vector2 init_pos = Vector2.zero;
 	//指を置いた位置
-	private Vector2 touch_start_pos;
+	private Vector2 touch_start_pos = Vector2.zero;
 	//指を離した位置
-	private Vector2 touch_end_pos;
+	private Vector2 touch_end_pos = Vector2.zero;
 	//指の現在位置
-	private Vector2 touch_now_pos;
+	private Vector2 touch_now_pos = Vector2.zero;
 	//スワイプ方向
-	public Vector2 swipe_vec;
+	private Vector2 swipe_vec = Vector2.zero;
+	public Vector2 swipeVec
+	{
+		get
+		{
+			return swipe_vec;
+		}
+	}
 	//スワイプ判定の基準値
 	[SerializeField]
 	private float move_val = 30.0f;
 	//投擲方向右限界値
 	[SerializeField]
-	private float angle_limit_right = 35.0f;
+	private float angle_limit_right = 30.0f;
 	//投擲方向左限界値
 	[SerializeField]
-	private float angle_limit_left = 155.0f;
+	private float angle_limit_left = 150.0f;
 	
 
 	//投擲パワー最低値
-	public float min_pow = 0.5f;
+	[SerializeField]
+	private float min_pow = 60f;
+	public float minPow
+	{
+		get
+		{
+			return min_pow;
+		}
+	}
 	//投擲パワー最大値
-	public float max_pow = 3.0f;
+	[SerializeField]
+	private float max_pow = 120.0f;
+	public float maxPow
+	{
+		get
+		{
+			return max_pow;
+		}
+	}
 	//パワーの上昇値
 	[SerializeField]
-	private float pow_up_val = 0.1f;
+	private float pow_up_val = 1.0f;
 
 	//高速度基準値
 	[SerializeField]
@@ -49,19 +72,25 @@ public class ThrowDice : MonoBehaviour
 
 
 	//パワーゲージの最大値を超えたか判定用
-	private bool up_flg = true;
+	private bool is_max = true;
 	//投擲パワー値
-	public float throw_pow = 0.0f;
+	private float throw_pow = 0.0f;
+	public float thorowPow
+	{
+		get
+		{
+			return throw_pow;
+		}
+	}
 
+	private GameObject _AreaCircle = default;
 	private Transform _transform = default;
 	private Rigidbody2D _rigdbody2D = default;
-	private DiceStatus _diceface = default;
-	private GameObject _areacircle = default;
-	private Collider2D _player_dice = default;
-	private CheckThrowingDice _check_throwing;
+	private DiceStatus _diceStatus = default;
+	private Collider2D _collider2D = default;
+	private CheckThrowingDice _checkThrowing = default;
 
 	//サイコロの面番号
-	[SerializeField]
 	private int face_element_num = 0;
 	//フレーム数
 	private int frame_cnt = 0;
@@ -70,12 +99,12 @@ public class ThrowDice : MonoBehaviour
 	private void Awake()
 	{
 		//各種コンポーネント取得
+		_AreaCircle = transform.Find("area_circle").gameObject;
 		_transform = GetComponent<Transform>();
 		_rigdbody2D = GetComponent<Rigidbody2D>();
-		_diceface = GetComponent<DiceStatus>();
-		_areacircle = transform.Find("area_circle").gameObject;
-		_player_dice = GetComponent<Collider2D>();
-		_check_throwing = GetComponent<CheckThrowingDice>();
+		_diceStatus = GetComponent<DiceStatus>();
+		_collider2D = GetComponent<Collider2D>();
+		_checkThrowing = GetComponent<CheckThrowingDice>();
 		//初期化用位置に現在値を入れる
 		init_pos = _transform.position;
 		//投擲パワーを最低値に
@@ -96,7 +125,7 @@ public class ThrowDice : MonoBehaviour
 	void Update()
 	{
 		//サイコロの面番号から表示する画像を選択
-		_diceface.SetSprite(CreateElementNum());
+		_diceStatus.SetSprite(CreateElementNum());
 		//フリック処理
 		Flick();
 	}
@@ -137,19 +166,19 @@ public class ThrowDice : MonoBehaviour
 	public void Throw(Vector2 dir)
 	{
 		_rigdbody2D.AddForce(dir, ForceMode2D.Impulse);
-		_check_throwing.SetVariable(VariavleName.isThrow);
+		_checkThrowing.SetVariable(VariavleName.isThrow);
 
 	}
 
 	//投擲パワー上昇処理
 	void ThrowPower()
 	{
-		if (up_flg == true)
+		if (is_max == true)
 		{
 			throw_pow += pow_up_val;
 			if (throw_pow >= max_pow)
 			{
-				up_flg = false;
+				is_max = false;
 			}
 		}
 		else
@@ -157,7 +186,7 @@ public class ThrowDice : MonoBehaviour
 			throw_pow -= pow_up_val;
 			if (throw_pow <= min_pow)
 			{
-				up_flg = true;
+				is_max = true;
 			}
 		}
 	}
@@ -212,7 +241,7 @@ public class ThrowDice : MonoBehaviour
 			else
 			{
 				Throw(swipe_vec.normalized * throw_pow);
-				_areacircle.GetComponent<Collider2D>().enabled = true;
+				_AreaCircle.GetComponent<Collider2D>().enabled = true;
 			}
 		}
 		
@@ -227,7 +256,7 @@ public class ThrowDice : MonoBehaviour
 		throw_pow = min_pow;
 		face_element_num = 0;
 		swipe_vec = Vector2.up;
-		_check_throwing.SetVariable(VariavleName.isCancel);
+		_checkThrowing.SetVariable(VariavleName.isCancel);
 	}
 
 	//フリック操作処理
@@ -235,8 +264,8 @@ public class ThrowDice : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			_areacircle.GetComponent<Collider2D>().enabled = false;
-			_player_dice.isTrigger = true;
+			_AreaCircle.GetComponent<Collider2D>().enabled = false;
+			_collider2D.isTrigger = true;
 			touch_start_pos = new Vector2(Input.mousePosition.x,
 										Input.mousePosition.y);
 			throw_pow = min_pow;
@@ -268,7 +297,7 @@ public class ThrowDice : MonoBehaviour
 	{
 		if (collision.CompareTag("in_field"))
 		{
-			_player_dice.isTrigger = false;
+			_collider2D.isTrigger = false;
 		}
 	}
 }
