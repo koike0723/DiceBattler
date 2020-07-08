@@ -11,7 +11,7 @@ public class RectScalerWithViewport : MonoBehaviour
 	RectTransform ref_rect = null;
 
 	[SerializeField]
-	Vector2 reference_resolution = new Vector2(1920, 1080);
+	Vector2 reference_resolution = new Vector2(1080,1920);
 
 	[Range(0, 1)]
 	[SerializeField]
@@ -24,31 +24,25 @@ public class RectScalerWithViewport : MonoBehaviour
 
 	private void Awake()
 	{
-		if (ref_rect == null)
+		if(ref_rect == null)
 		{
-			ref_rect = GetComponent<RectTransform>();
+			ref_rect.GetComponent<RectTransform>();
 		}
-		UpdateRect();
 	}
 
 	// Start is called before the first frame update
 	void Start()
     {
-		
+		UpdateRect();
 	}
 
     // Update is called once per frame
     void Update()
     {
-		UpdateRectEithCheck();
+		UpdateRectWithCheck();
     }
 
-	private void OnValidate()
-	{
-		UpdateRect();
-	}
-
-	void UpdateRectEithCheck()
+	void UpdateRectWithCheck()
 	{
 		Camera cam = Camera.main;
 		float width = cam.rect.width * Screen.width;

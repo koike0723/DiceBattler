@@ -9,7 +9,7 @@ public class CameraStableAspect : MonoBehaviour
 {
 
 	[SerializeField]
-	private Camera ref_camera;
+	private Camera ref_camera = null;
 	[SerializeField]
 	private int width = 1080;
 	[SerializeField]
@@ -20,19 +20,19 @@ public class CameraStableAspect : MonoBehaviour
 	private int m_width = -1;
 	private int m_height = -1;
 
+
 	private void Awake()
 	{
 		if (ref_camera == null)
 		{
-			ref_camera = GetComponent<Camera>();
+			ref_camera.GetComponent<Camera>();
 		}
-		UpdateCamera();
 	}
 
 	// Start is called before the first frame update
 	void Start()
     {
-		
+		UpdateCamera();
 	}
 
     // Update is called once per frame
@@ -70,10 +70,10 @@ public class CameraStableAspect : MonoBehaviour
 		else
 		{
 			float bg_scale = aspect / target_aspect;
-			orhtographic_size *= bg_scale;
+			//orhtographic_size *= bg_scale;
 
 			float bg_scale_h = target_h / screen_h;
-			float cam_width = target_w / (screen_w * bg_scale);
+			float cam_width = target_w / (screen_w * bg_scale_h);
 			ref_camera.rect = new Rect((1f-cam_width)*0.5f, 0f, cam_width, 1f);
 		}
 
