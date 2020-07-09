@@ -12,17 +12,20 @@ public class CheckThrowingDice : MonoBehaviour
 {
    
     //FSMを持つゲームオブジェクト
-    public GameObject batle_state_machine;
+    private GameObject _BatleStateMachine;
     // 呼び出したいFSM名  
-    public string FSM_reference_name;
+    [SerializeField]
+    private string FSM_reference_name;
     // 変更したい変数名  
-    public string[] variavle_name;
+    [SerializeField]
+    private string[] m_variavle_name;
     private PlayMakerFSM[] FSMs;
 
     // Start is called before the first frame update
     void Start()
     {
-        FSMs = batle_state_machine.GetComponents<PlayMakerFSM>();
+        _BatleStateMachine = GameObject.FindGameObjectWithTag("BattleStateMachine");
+        FSMs = _BatleStateMachine.GetComponents<PlayMakerFSM>();
     }
 
     // Update is called once per frame
@@ -58,7 +61,7 @@ public class CheckThrowingDice : MonoBehaviour
             if (fsm.FsmName == FSM_reference_name)
             {
                 // 変数のSet  
-                fsm.FsmVariables.GetFsmBool(variavle_name[num]).Value = true;
+                fsm.FsmVariables.GetFsmBool(m_variavle_name[num]).Value = true;
             }
         }
     }

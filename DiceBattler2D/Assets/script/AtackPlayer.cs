@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class AtackPlayer : MonoBehaviour
 {
-	[SerializeField]
-	private GameObject _enemy = default;
-	private EnemyStatus _enemy_status = default;
+	private GameObject _Enemy = default;
+	private EnemyStatus _enemyStatus = default;
 
 	private Rigidbody2D _rigidbody2D = default;
-	private ThrowDice _throw_dice = default;
+	private ThrowDice _throwDice = default;
 	private bool is_damage = default;
 
 	private AreaCircle _area_circle = default;
@@ -18,10 +17,11 @@ public class AtackPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		_enemy_status = _enemy.GetComponent<EnemyStatus>();
+		_Enemy = GameObject.FindGameObjectWithTag("Enemy");
 
+		_enemyStatus = _Enemy.GetComponent<EnemyStatus>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
-		_throw_dice = GetComponent<ThrowDice>();
+		_throwDice = GetComponent<ThrowDice>();
 		_area_circle = transform.Find("area_circle").gameObject.GetComponent<AreaCircle>();
 		_dice_status = GetComponent<DiceStatus>();
 
@@ -34,7 +34,7 @@ public class AtackPlayer : MonoBehaviour
 		if (_area_circle.is_action && !is_damage)
 		{
 			int dmg = (_area_circle.del_dice_num * _dice_status.atk * 10) + (_dice_status.atk * _area_circle.dice_element_val);
-			_enemy_status.Damage(dmg);
+			_enemyStatus.Damage(dmg);
 			is_damage = true;
 		}
     }

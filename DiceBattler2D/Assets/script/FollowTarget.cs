@@ -10,6 +10,6 @@ public class FollowTarget : MonoBehaviour
 	private void LateUpdate()
 	{
 		transform.rotation = Quaternion.identity;
-		transform.position = target.position + offset;
+		transform.localPosition = offset;
 	}
 }

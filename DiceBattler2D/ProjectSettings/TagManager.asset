@@ -6,6 +6,12 @@ TagManager:
   tags:
   - other_dice
   - in_field
+  - moved
+  - PlayerCharaContainer
+  - PartyMemberList
+  - BattleStateMachine
+  - Enemy
+  - Tab
   layers:
   - Default
   - TransparentFX
