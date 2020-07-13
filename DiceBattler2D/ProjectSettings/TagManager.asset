@@ -12,6 +12,9 @@ TagManager:
   - BattleStateMachine
   - Enemy
   - Tab
+  - TabFrame1
+  - TabFrame2
+  - TabFrame3
   layers:
   - Default
   - TransparentFX

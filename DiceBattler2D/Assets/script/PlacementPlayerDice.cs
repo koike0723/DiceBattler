@@ -35,6 +35,11 @@ public class PlacementPlayerDice : MonoBehaviour
 
     public void Placement(int mem_num)
     {
+        var player_dice = GameObject.FindGameObjectWithTag("Player");
+        if(player_dice != null)
+        {
+            GameObject.Destroy(player_dice);
+        }
         GameObject.Instantiate(_playerCharacters.GetCharacterPrefab(_partyMembers.party_member[mem_num]));
     }
 }

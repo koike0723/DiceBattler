@@ -10,13 +10,20 @@ public class ManagePow : MonoBehaviour
 	private ThrowDice _throwDice = default;
 	private Slider _slider = default;
 
-    // Start is called before the first frame update
-    void Start()
+
+	private void Awake()
+	{
+		
+	}
+
+	// Start is called before the first frame update
+	void Start()
     {
+		//playerdiceが生成後にcomponent取得を行いたいためstartで処理
 		_PlayerDice = GameObject.FindGameObjectWithTag("Player");
 		_throwDice = _PlayerDice.GetComponent<ThrowDice>();
 		_slider = GetComponent<Slider>();
-    }
+	}
 
     // Update is called once per frame
     void Update()
@@ -26,4 +33,10 @@ public class ManagePow : MonoBehaviour
 		_slider.minValue = _throwDice.minPow;
 		_slider.value = _throwDice.thorowPow;
     }
+
+	public void ResetPlayerDice()
+	{
+		_PlayerDice = GameObject.FindGameObjectWithTag("Player");
+		_throwDice = _PlayerDice.GetComponent<ThrowDice>();
+	}
 }

@@ -6,20 +6,21 @@ public class CheckMoveDice : MonoBehaviour
 {
 
     //FSMを持つゲームオブジェクト
-    private GameObject _BattleStateMachine;
+    private GameObject _BattleStateMachine = default;
     // 呼び出したいFSM名  
     [SerializeField]
-    private string FSM_reference_name;
+    private string FSM_reference_name = default;
     // 変更したい変数名  
     [SerializeField]
-    private string variavle_name;
-    private PlayMakerFSM[] FSMs;
+    private string variavle_name = default;
+    private PlayMakerFSM[] FSMs = default;
 
     private GameObject _PlayerDice = default;
 
     // Start is called before the first frame update
     void Start()
     {
+        //gameobjectの取得をplayerdiceの生成後行いたいためstartで処理
         _BattleStateMachine = GameObject.FindGameObjectWithTag("BattleStateMachine");
         FSMs = _BattleStateMachine.GetComponents<PlayMakerFSM>();
     }

@@ -12,13 +12,13 @@ public class CheckThrowingDice : MonoBehaviour
 {
    
     //FSMを持つゲームオブジェクト
-    private GameObject _BatleStateMachine;
+    private GameObject _BatleStateMachine = default;
     // 呼び出したいFSM名  
     [SerializeField]
-    private string FSM_reference_name;
+    private string FSM_reference_name = default;
     // 変更したい変数名  
     [SerializeField]
-    private string[] m_variavle_name;
+    private string[] m_variavle_name = default;
     private PlayMakerFSM[] FSMs;
 
     // Start is called before the first frame update
