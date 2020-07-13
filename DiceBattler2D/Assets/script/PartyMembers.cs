@@ -24,4 +24,9 @@ public class PartyMembers : MonoBehaviour
     {
         
     }
+
+    public int GetPartyMemberNum(int num)
+    {
+        return party_member[num];
+    }
 }
