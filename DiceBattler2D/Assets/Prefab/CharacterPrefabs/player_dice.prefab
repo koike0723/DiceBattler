@@ -68,9 +68,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2006876925
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 5058091112454053954}
   - component: {fileID: 3692111958105332660}
   - component: {fileID: 7410547047059716033}
+  - component: {fileID: 4963738523089421282}
   - component: {fileID: 3412583735064844687}
   - component: {fileID: 3692111958105332666}
   - component: {fileID: 3692111958105332658}
@@ -241,10 +242,6 @@ MonoBehaviour:
   min_pow: 60
   max_pow: 120
   pow_up_val: 1
-  high_verocity_val: 5
-  low_verocity_val: 0.005
-  frame_num_high: 15
-  frame_num_low: 100
 --- !u!114 &7410547047059716033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +265,22 @@ MonoBehaviour:
   dice_hp: 100
   hp_max: 100
   atk: 5
+--- !u!114 &4963738523089421282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692111958105332667}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cdb87eabb53134096f3a46b4de58ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  high_verocity_val: 5
+  low_verocity_val: 0.005
+  frame_num_high: 15
+  frame_num_low: 100
 --- !u!114 &3412583735064844687
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -875,7 +875,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 59.546875
-        y: 102.05469
+        y: 182.05469
         width: 100
         height: 32
       isBreakpoint: 0
@@ -902,17 +902,17 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.ArrayGet
         - HutongGames.PlayMaker.Actions.ArrayGet
         customNames:
-        - 
-        - 
-        - 
-        - 
-        - 
+        - Get Component _placementPlayerDice
+        - Get Component _partyMrmbers
+        - Get Component _managePow
+        - Get Component _arrowVec
+        - Get Component _enemyStatus
         - 
         - 
         - 
         - 
         actionEnabled: 010101010101010101
-        actionIsOpen: 010101010101010101
+        actionIsOpen: 000000000000000000
         actionStartIndex: 000000000300000006000000090000000c0000000f000000160000001b00000020000000
         actionHashCodes: 04d8140204d8140204d8140204d8140204d81402ca51e9006ba593016ba593016ba59301
         unityObjectParams: []
@@ -973,42 +973,42 @@ MonoBehaviour:
           value: Placement
         fsmObjectParams:
         - useVariable: 1
-          name: _placement_player_dice
+          name: _placementPlayerDice
           tooltip: 
           showInInspector: 0
           networkSync: 0
           typeName: PlacementPlayerDice
           value: {fileID: 0}
         - useVariable: 1
-          name: _party_members
+          name: _partyMembers
           tooltip: 
           showInInspector: 0
           networkSync: 0
           typeName: PartyMembers
           value: {fileID: 0}
         - useVariable: 1
-          name: _manage_pow
+          name: _managePow
           tooltip: 
           showInInspector: 0
           networkSync: 0
           typeName: ManagePow
           value: {fileID: 0}
         - useVariable: 1
-          name: _arrow_vec
+          name: _arrowVec
           tooltip: 
           showInInspector: 0
           networkSync: 0
           typeName: ArrowVec
           value: {fileID: 0}
         - useVariable: 1
-          name: _enemy_status
+          name: _enemyStatus
           tooltip: 
           showInInspector: 0
           networkSync: 0
           typeName: EnemyStatus
           value: {fileID: 0}
         - useVariable: 1
-          name: _placement_player_dice
+          name: _placementPlayerDice
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -1188,19 +1188,19 @@ MonoBehaviour:
         fsmFloatParams: []
         fsmIntParams:
         - useVariable: 1
-          name: mem_No.1
+          name: MEM_NUM_1
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: 0
         - useVariable: 1
-          name: mem_No.2
+          name: MEM_NUM_2
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: 1
         - useVariable: 1
-          name: mem_No.3
+          name: MEM_NUM_3
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -1268,7 +1268,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 204.13281
-        y: 104.03906
+        y: 184.03906
         width: 100
         height: 32
       isBreakpoint: 0
@@ -1293,11 +1293,11 @@ MonoBehaviour:
         customNames:
         - 
         - 
-        - 
-        - 
-        - 
+        - Enable ManagePow
+        - Enable ArrowVec
+        - Find Game Object.Tag(Player)
         actionEnabled: 0101010101
-        actionIsOpen: 0101010101
+        actionIsOpen: 0000000000
         actionStartIndex: 0000000003000000080000000d00000012000000
         actionHashCodes: 48c01101b2cf10003a4cad053a4cad05786b3902
         unityObjectParams:
@@ -1458,7 +1458,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 685.8203
-        y: 159.58594
+        y: 239.58594
         width: 100
         height: 80
       isBreakpoint: 0
@@ -1513,7 +1513,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101010101
-        actionIsOpen: 010101010101
+        actionIsOpen: 000000000000
         actionStartIndex: 00000000050000000a0000000d0000001000000013000000
         actionHashCodes: b2cf1000b2cf1000c6c21405c6c21405c6c21405c6c21405
         unityObjectParams: []
@@ -1779,8 +1779,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 676.9297
-        y: 374.0625
+        x: 682.96875
+        y: 456.02344
         width: 100
         height: 48
       isBreakpoint: 0
@@ -1806,20 +1806,31 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.EnableBehaviour
-        - HutongGames.PlayMaker.Actions.BoolAnyTrue
-        - HutongGames.PlayMaker.Actions.BoolAnyTrue
+        - HutongGames.PlayMaker.Actions.EnableBehaviour
+        - HutongGames.PlayMaker.Actions.BoolTest
+        - HutongGames.PlayMaker.Actions.BoolTest
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000050000000a000000
-        actionHashCodes: 3a4cad058076870580768705
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 00000000
+        actionStartIndex: 00000000050000000a0000000e000000
+        actionHashCodes: 3a4cad053a4cad05a4c8bf00a4c8bf00
         unityObjectParams:
+        - {fileID: 0}
         - {fileID: 0}
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: _PlyaerDice
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -1841,6 +1852,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: ThrowDice
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: DisplayDiceFace
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -1860,6 +1877,18 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: is_throw
           tooltip: 
@@ -1867,19 +1896,7 @@ MonoBehaviour:
           networkSync: 0
           value: 0
         - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
           name: is_cancel
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 1
-          name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -1891,40 +1908,43 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - THROW
+        - 
         - CANCEL
+        - 
         byteData: 0101
-        arrayParamSizes: 0100000001000000
-        arrayParamTypes:
-        - HutongGames.PlayMaker.FsmBool
-        - HutongGames.PlayMaker.FsmBool
+        arrayParamSizes: 
+        arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000120000000500000011000000110000000c000000110000001700000011000000010000000c00000011000000170000001100000001000000
+        paramDataType: 140000001200000005000000110000001100000014000000120000000500000011000000110000001100000017000000170000000100000011000000170000001700000001000000
         paramName:
         - gameObject
         - behaviour
         - component
         - enable
         - resetOnExit
-        - boolVariables
-        - 
-        - sendEvent
-        - storeResult
+        - gameObject
+        - behaviour
+        - component
+        - enable
+        - resetOnExit
+        - boolVariable
+        - isTrue
+        - isFalse
         - everyFrame
-        - boolVariables
-        - 
-        - sendEvent
-        - storeResult
+        - boolVariable
+        - isTrue
+        - isFalse
         - everyFrame
-        paramDataPos: 000000000000000000000000000000000100000000000000020000000000000003000000000000000100000004000000010000000500000001000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000100000001000000010000000100000002000000030000000400000000000000010000000000000005000000020000000300000001000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000001000000
     - name: DiceMoving
       description: 
       colorIndex: 1
       position:
         serializedVersion: 2
         x: 878.78125
-        y: 410.0703
+        y: 490.0703
         width: 100
         height: 32
       isBreakpoint: 0
@@ -1943,15 +1963,15 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.EnableBehaviour
         - HutongGames.PlayMaker.Actions.SetBoolValue
-        - HutongGames.PlayMaker.Actions.BoolAnyTrue
+        - HutongGames.PlayMaker.Actions.BoolTest
         customNames:
         - 
         - 
         - 
         actionEnabled: 010101
-        actionIsOpen: 010101
+        actionIsOpen: 000000
         actionStartIndex: 000000000500000008000000
-        actionHashCodes: 3a4cad0527fbe10380768705
+        actionHashCodes: 3a4cad0527fbe103a4c8bf00
         unityObjectParams:
         - {fileID: 0}
         fsmGameObjectParams: []
@@ -2014,12 +2034,6 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -2027,13 +2041,13 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - FINISHED
+        - 
         byteData: 0001
-        arrayParamSizes: 01000000
-        arrayParamTypes:
-        - HutongGames.PlayMaker.FsmBool
+        arrayParamSizes: 
+        arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000120000000500000011000000110000001100000011000000010000000c00000011000000170000001100000001000000
+        paramDataType: 140000001200000005000000110000001100000011000000110000000100000011000000170000001700000001000000
         paramName:
         - gameObject
         - behaviour
@@ -2043,20 +2057,19 @@ MonoBehaviour:
         - boolVariable
         - boolValue
         - everyFrame
-        - boolVariables
-        - 
-        - sendEvent
-        - storeResult
+        - boolVariable
+        - isTrue
+        - isFalse
         - everyFrame
-        paramDataPos: 00000000000000000000000000000000010000000200000003000000000000000000000004000000000000000500000001000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000100000002000000030000000000000004000000000000000100000001000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000000000000000000000000000001000000
     - name: PlayerBattleProcessing
       description: 
       colorIndex: 1
       position:
         serializedVersion: 2
         x: 1042.6328
-        y: 401.54688
+        y: 481.54688
         width: 154
         height: 48
       isBreakpoint: 0
@@ -2087,7 +2100,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0101
+        actionIsOpen: 0000
         actionStartIndex: 0000000006000000
         actionHashCodes: ca51e90009faa102
         unityObjectParams: []
@@ -2108,7 +2121,7 @@ MonoBehaviour:
           value: GetDiceHP
         fsmObjectParams:
         - useVariable: 1
-          name: _enemy_status
+          name: _enemyStatus
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -2193,7 +2206,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 1463.3125
-        y: 453.5
+        y: 533.5
         width: 102
         height: 32
       isBreakpoint: 0
@@ -2252,8 +2265,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1362.5312
-        y: 584.9531
+        x: 1354.3203
+        y: 632.41406
         width: 100
         height: 16
       isBreakpoint: 0
@@ -2305,7 +2318,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 350.77344
-        y: 102.55469
+        y: 182.55469
         width: 108.4
         height: 32
       isBreakpoint: 0
@@ -2325,16 +2338,16 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.EnableBehaviour
         - HutongGames.PlayMaker.Actions.EnableBehaviour
         - HutongGames.PlayMaker.Actions.ActivateGameObject
-        - HutongGames.PlayMaker.Actions.BoolAnyTrue
+        - HutongGames.PlayMaker.Actions.BoolTest
         customNames:
+        - Enable GenerateDice ROE
+        - Enable CheckStopOtherDice ROE
         - 
-        - 
-        - 
-        - 
+        - IsOtherDiceStop?
         actionEnabled: 01010101
-        actionIsOpen: 01010101
+        actionIsOpen: 00000000
         actionStartIndex: 00000000050000000a0000000f000000
-        actionHashCodes: 3a4cad053a4cad05b2cf100080768705
+        actionHashCodes: 3a4cad053a4cad05b2cf1000a4c8bf00
         unityObjectParams:
         - {fileID: 1479942183}
         - {fileID: 1479942182}
@@ -2432,12 +2445,6 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -2445,13 +2452,13 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - PLAYER_TURN
-        byteData: 000001
-        arrayParamSizes: 01000000
-        arrayParamTypes:
-        - HutongGames.PlayMaker.FsmBool
+        - 
+        byteData: 000000
+        arrayParamSizes: 
+        arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1400000012000000050000001100000011000000140000001200000005000000110000001100000014000000110000001100000001000000010000000c00000011000000170000001100000001000000
+        paramDataType: 14000000120000000500000011000000110000001400000012000000050000001100000011000000140000001100000011000000010000000100000011000000170000001700000001000000
         paramName:
         - gameObject
         - behaviour
@@ -2468,20 +2475,19 @@ MonoBehaviour:
         - recursive
         - resetOnExit
         - everyFrame
-        - boolVariables
-        - 
-        - sendEvent
-        - storeResult
+        - boolVariable
+        - isTrue
+        - isFalse
         - everyFrame
-        paramDataPos: 0000000000000000000000000000000001000000010000000100000001000000020000000300000002000000040000000500000000000000010000000000000006000000000000000700000002000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000000000000000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000010000000100000001000000010000000200000003000000020000000400000005000000000000000100000006000000000000000100000002000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000100000000000000000000000000000001000000
     - name: ActionWaiting
       description: 
       colorIndex: 1
       position:
         serializedVersion: 2
         x: 493.21875
-        y: 130.21875
+        y: 210.21875
         width: 107.6
         height: 48
       isBreakpoint: 0
@@ -2509,27 +2515,30 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.FindGameObject
         - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.CallMethod
-        - HutongGames.PlayMaker.Actions.UiOnPointerDownEvent
+        - HutongGames.PlayMaker.Actions.EnableBehaviour
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - HutongGames.PlayMaker.Actions.SetBoolValue
+        - HutongGames.PlayMaker.Actions.SetBoolValue
         - HutongGames.PlayMaker.Actions.UiOnPointerClickEvent
-        - HutongGames.PlayMaker.Actions.ActivateGameObject
-        - HutongGames.PlayMaker.Actions.ActivateGameObject
-        - HutongGames.PlayMaker.Actions.SetBoolValue
-        - HutongGames.PlayMaker.Actions.SetBoolValue
+        - HutongGames.PlayMaker.Actions.UiOnPointerDownEvent
         customNames:
+        - Find Game Object.Tag(Player)
         - 
         - 
+        - Disable DisplayDiceFace
         - 
         - 
-        - UI On Pointer Click Event
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 010101010101010101
-        actionIsOpen: 010101010101010101
-        actionStartIndex: 0000000003000000090000000f00000012000000150000001a0000001f00000022000000
-        actionHashCodes: 786b3902ca51e900ca51e900c6c21405c6c21405b2cf1000b2cf100027fbe10327fbe103
-        unityObjectParams: []
+        - is_cansel=false
+        - is_moving=false
+        - UI On Pointer Click Event _CloaseTab
+        - UI On Pointer Down Event _PlayerDice
+        actionEnabled: 01010101010101010101
+        actionIsOpen: 00000000000000000000
+        actionStartIndex: 0000000003000000090000000f00000014000000190000001e000000210000002400000027000000
+        actionHashCodes: 786b3902ca51e900ca51e9003a4cad05b2cf1000b2cf100027fbe10327fbe103c6c21405c6c21405
+        unityObjectParams:
+        - {fileID: 0}
         fsmGameObjectParams:
         - useVariable: 1
           name: _PlyaerDice
@@ -2557,6 +2566,14 @@ MonoBehaviour:
         - ownerOption: 1
           gameObject:
             useVariable: 1
+            name: _OpenTab
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1770245702}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
             name: _CloseTab
             tooltip: 
             showInInspector: 1
@@ -2565,11 +2582,11 @@ MonoBehaviour:
         - ownerOption: 1
           gameObject:
             useVariable: 1
-            name: _OpenTab
+            name: _PlyaerDice
             tooltip: 
-            showInInspector: 1
+            showInInspector: 0
             networkSync: 0
-            value: {fileID: 1770245702}
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -2665,16 +2682,22 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: ResetPlayerDice
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: DisplayDiceFace
         fsmObjectParams:
         - useVariable: 1
-          name: _arrow_vec
+          name: _arrowVec
           tooltip: 
           showInInspector: 0
           networkSync: 0
           typeName: ArrowVec
           value: {fileID: 0}
         - useVariable: 1
-          name: _manage_pow
+          name: _managePow
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -2739,6 +2762,18 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: 1
         - useVariable: 0
           name: 
@@ -2788,8 +2823,8 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - OPERATION
         - TAB_OPEN
+        - OPERATION
         byteData: 00000000000000000000
         arrayParamSizes: 0000000000000000
         arrayParamTypes:
@@ -2797,7 +2832,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 12000000120000001300000018000000120000000c00000027000000010000000100000018000000120000000c00000027000000010000000100000017000000140000001f00000017000000140000001f00000014000000110000001100000001000000010000001400000011000000110000000100000001000000110000001100000001000000110000001100000001000000
+        paramDataType: 12000000120000001300000018000000120000000c00000027000000010000000100000018000000120000000c00000027000000010000000100000014000000120000000500000011000000110000001400000011000000110000000100000001000000140000001100000011000000010000000100000011000000110000000100000011000000110000000100000017000000140000001f00000017000000140000001f000000
         paramName:
         - objectName
         - withTag
@@ -2814,37 +2849,42 @@ MonoBehaviour:
         - storeResult
         - everyFrame
         - manualUI
-        - onPointerDownEvent
         - gameObject
-        - eventTarget
+        - behaviour
+        - component
+        - enable
+        - resetOnExit
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        - boolVariable
+        - boolValue
+        - everyFrame
+        - boolVariable
+        - boolValue
+        - everyFrame
         - onPointerClickEvent
         - gameObject
         - eventTarget
+        - onPointerDownEvent
         - gameObject
-        - activate
-        - recursive
-        - resetOnExit
-        - everyFrame
-        - gameObject
-        - activate
-        - recursive
-        - resetOnExit
-        - everyFrame
-        - boolVariable
-        - boolValue
-        - everyFrame
-        - boolVariable
-        - boolValue
-        - everyFrame
-        paramDataPos: 00000000010000000000000000000000020000000000000000000000000000000100000001000000030000000100000001000000020000000300000000000000000000000000000001000000010000000100000002000000000000000100000004000000050000000300000002000000030000000600000007000000040000000500000008000000060000000700000009000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000010000000100000000000000000000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000000000000000000000000000100000001000000000000000000000001000000000000000000000001000000
+        - eventTarget
+        paramDataPos: 000000000100000000000000000000000200000000000000000000000000000001000000010000000300000001000000010000000200000003000000000000000400000000000000000000000100000001000000020000000300000004000000050000000200000004000000050000000600000007000000060000000700000008000000080000000900000009000000000000000300000000000000010000000400000001000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000000000000000000000000000001000000010000000000000000000000000000000100000001000000000000000000000001000000000000000000000001000000000000000000000000000000000000000000000000000000
     - name: DiceChanging
       description: 
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 1071.125
-        y: 230.90625
+        x: 1070.6094
+        y: 416.64062
         width: 106.8
         height: 32
       isBreakpoint: 0
@@ -2867,7 +2907,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0101
+        actionIsOpen: 0000
         actionStartIndex: 0000000007000000
         actionHashCodes: ca51e900f6e5be03
         unityObjectParams: []
@@ -2896,7 +2936,7 @@ MonoBehaviour:
           value: Placement
         fsmObjectParams:
         - useVariable: 1
-          name: _placement_player_dice
+          name: _placementPlayerDice
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -3017,7 +3057,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 1654.8594
-        y: 426.75
+        y: 506.75
         width: 156.4
         height: 48
       isBreakpoint: 0
@@ -3028,7 +3068,7 @@ MonoBehaviour:
           name: NEXT_TURN
           isSystemEvent: 0
           isGlobal: 0
-        toState: SetFieldDice
+        toState: NextTurnSet
         linkStyle: 2
         linkConstraint: 2
         colorIndex: 0
@@ -3041,51 +3081,338 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetComponent
+        - HutongGames.PlayMaker.Actions.CallMethod
+        - HutongGames.PlayMaker.Actions.GetComponent
+        - HutongGames.PlayMaker.Actions.CallMethod
+        - HutongGames.PlayMaker.Actions.GetComponent
+        - HutongGames.PlayMaker.Actions.CallMethod
+        - HutongGames.PlayMaker.Actions.BoolTest
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 01010101010101
+        actionIsOpen: 00000000000001
+        actionStartIndex: 00000000030000000a0000000d00000014000000170000001e000000
+        actionHashCodes: 04d81402ca51e90004d81402ca51e90004d81402ca51e900a4c8bf00
         unityObjectParams: []
         fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: _Member_1
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: _Member_2
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: _Member_3
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: SwitchIsThrowed
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: SwitchIsThrowed
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: SwitchIsThrowed
+        fsmObjectParams:
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        fsmVarParams:
+        - variableName: 
+          objectType: UnityEngine.Object
+          useVariable: 0
+          type: 2
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: 
+          objectType: 
+          useVariable: 0
+          type: -1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: 
+          objectType: UnityEngine.Object
+          useVariable: 0
+          type: 2
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: 
+          objectType: 
+          useVariable: 0
+          type: -1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: 
+          objectType: UnityEngine.Object
+          useVariable: 0
+          type: 2
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: 
+          objectType: 
+          useVariable: 0
+          type: -1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 1
+          name: IS_TEST
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
+        stringParams:
+        - NEXT_TURN
+        - KILL_OPPONENT
+        byteData: 00000000000000000001
+        arrayParamSizes: 010000000100000001000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmVar
+        - HutongGames.PlayMaker.FsmVar
+        - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        paramDataType: 14000000180000000100000018000000120000000c0000002700000027000000010000000100000014000000180000000100000018000000120000000c0000002700000027000000010000000100000014000000180000000100000018000000120000000c0000002700000027000000010000000100000011000000170000001700000001000000
+        paramName:
+        - gameObject
+        - storeComponent
+        - everyFrame
+        - behaviour
+        - methodName
+        - parameters
+        - 
+        - storeResult
+        - everyFrame
+        - manualUI
+        - gameObject
+        - storeComponent
+        - everyFrame
+        - behaviour
+        - methodName
+        - parameters
+        - 
+        - storeResult
+        - everyFrame
+        - manualUI
+        - gameObject
+        - storeComponent
+        - everyFrame
+        - behaviour
+        - methodName
+        - parameters
+        - 
+        - storeResult
+        - everyFrame
+        - manualUI
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        paramDataPos: 00000000000000000000000001000000000000000000000000000000010000000100000002000000010000000200000003000000030000000100000001000000020000000300000004000000050000000200000004000000060000000500000002000000020000000400000005000000070000000800000000000000000000000100000009000000
+        paramByteDataSize: 00000000000000000100000000000000000000000000000000000000000000000100000001000000000000000000000001000000000000000000000000000000000000000000000001000000010000000000000000000000010000000000000000000000000000000000000000000000010000000100000000000000000000000000000001000000
     - name: SelectMember1
       description: 
       colorIndex: 1
       position:
         serializedVersion: 2
         x: 885.9453
-        y: 183.58594
+        y: 263.58594
         width: 113.2
         height: 32
       isBreakpoint: 0
@@ -3108,7 +3435,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0101
+        actionIsOpen: 0000
         actionStartIndex: 0000000007000000
         actionHashCodes: ca51e9005552ad05
         unityObjectParams: []
@@ -3137,14 +3464,14 @@ MonoBehaviour:
           value: GetPartyMemberNum
         fsmObjectParams:
         - useVariable: 1
-          name: _party_members
+          name: _partyMembers
           tooltip: 
           showInInspector: 0
           networkSync: 0
           typeName: PartyMembers
           value: {fileID: 0}
         fsmVarParams:
-        - variableName: mem_No.1
+        - variableName: MEM_NUM_1
           objectType: UnityEngine.Object
           useVariable: 1
           type: 1
@@ -3257,7 +3584,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 888.6094
-        y: 237.03125
+        y: 317.03125
         width: 114.8
         height: 32
       isBreakpoint: 0
@@ -3280,7 +3607,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0101
+        actionIsOpen: 0000
         actionStartIndex: 0000000007000000
         actionHashCodes: ca51e9005552ad05
         unityObjectParams: []
@@ -3309,14 +3636,14 @@ MonoBehaviour:
           value: GetPartyMemberNum
         fsmObjectParams:
         - useVariable: 1
-          name: _party_members
+          name: _partyMembers
           tooltip: 
           showInInspector: 0
           networkSync: 0
           typeName: PartyMembers
           value: {fileID: 0}
         fsmVarParams:
-        - variableName: mem_No.2
+        - variableName: MEM_NUM_2
           objectType: UnityEngine.Object
           useVariable: 1
           type: 1
@@ -3429,7 +3756,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 886.0625
-        y: 290.3828
+        y: 370.3828
         width: 114.8
         height: 32
       isBreakpoint: 0
@@ -3452,7 +3779,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0101
+        actionIsOpen: 0000
         actionStartIndex: 0000000007000000
         actionHashCodes: ca51e9005552ad05
         unityObjectParams: []
@@ -3481,14 +3808,14 @@ MonoBehaviour:
           value: GetPartyMemberNum
         fsmObjectParams:
         - useVariable: 1
-          name: _party_members
+          name: _partyMembers
           tooltip: 
           showInInspector: 0
           networkSync: 0
           typeName: PartyMembers
           value: {fileID: 0}
         fsmVarParams:
-        - variableName: mem_No.3
+        - variableName: MEM_NUM_3
           objectType: UnityEngine.Object
           useVariable: 1
           type: 1
@@ -3601,7 +3928,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 1273.6719
-        y: 398.67188
+        y: 478.67188
         width: 134
         height: 48
       isBreakpoint: 0
@@ -3612,9 +3939,9 @@ MonoBehaviour:
           name: PLAYER_TURN
           isSystemEvent: 0
           isGlobal: 0
-        toState: DiceChoice
-        linkStyle: 2
-        linkConstraint: 2
+        toState: CheckThroedDice
+        linkStyle: 0
+        linkConstraint: 0
         colorIndex: 0
       - fsmEvent:
           name: ENEMY_TURN
@@ -3629,16 +3956,22 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetTag
         - HutongGames.PlayMaker.Actions.DestroyObject
         - HutongGames.PlayMaker.Actions.IntAdd
+        - HutongGames.PlayMaker.Actions.ArrayGet
+        - HutongGames.PlayMaker.Actions.GetComponent
+        - HutongGames.PlayMaker.Actions.CallMethod
         - HutongGames.PlayMaker.Actions.IntCompare
         customNames:
         - 
         - 
         - 
         - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 00000000020000000500000008000000
-        actionHashCodes: 9bd6f8019ff80c02603dd90509faa102
+        - 
+        - 
+        - 
+        actionEnabled: 01010101010101
+        actionIsOpen: 00000000000000
+        actionStartIndex: 000000000200000005000000080000000d0000001000000017000000
+        actionHashCodes: 9bd6f8019ff80c02603dd9056ba5930104d81402ca51e90009faa102
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -3656,6 +3989,14 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: _MovedDiceFrame
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -3669,9 +4010,117 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: moved
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: SwitchIsThrowed
+        fsmObjectParams:
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        fsmVarParams:
+        - variableName: _MovedDiceFrame
+          objectType: UnityEngine.GameObject
+          useVariable: 1
+          type: 3
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: 
+          objectType: UnityEngine.Object
+          useVariable: 0
+          type: 2
+          floatValue: 0
+          intValue: 0
+          boolValue: 1
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: 
+          objectType: 
+          useVariable: 0
+          type: -1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: m_MemberFrames
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          type: 3
+          objectTypeName: UnityEngine.GameObject
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences:
+          - {fileID: 1229264997}
+          - {fileID: 1080394545}
+          - {fileID: 882574525}
         fsmEnumParams: []
         fsmFloatParams:
         - useVariable: 0
@@ -3694,13 +4143,19 @@ MonoBehaviour:
           networkSync: 0
           value: 1
         - useVariable: 1
+          name: select_mem_num
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
           name: act_num
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: 0
         - useVariable: 1
-          name: party_mem_num
+          name: PARTY_MEM_NUM
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -3718,15 +4173,17 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - 
         - ENEMY_TURN
         - PLAYER_TURN
         - ENEMY_TURN
-        byteData: 0001
-        arrayParamSizes: 
-        arrayParamTypes: []
+        byteData: 000000000001
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1400000012000000130000000f00000011000000100000001000000001000000100000001000000017000000170000001700000001000000
+        paramDataType: 1400000012000000130000000f00000011000000100000001000000001000000290000001000000027000000010000001700000014000000180000000100000018000000120000000c00000027000000270000000100000001000000100000001000000017000000170000001700000001000000
         paramName:
         - gameObject
         - tag
@@ -3736,14 +4193,493 @@ MonoBehaviour:
         - intVariable
         - add
         - everyFrame
+        - array
+        - index
+        - storeValue
+        - everyFrame
+        - indexOutOfRange
+        - gameObject
+        - storeComponent
+        - everyFrame
+        - behaviour
+        - methodName
+        - parameters
+        - 
+        - storeResult
+        - everyFrame
+        - manualUI
         - integer1
         - integer2
         - equal
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 0000000000000000000000000000000000000000000000000100000000000000020000000300000000000000010000000200000001000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000001000000
+        paramDataPos: 0000000000000000000000000000000000000000000000000100000000000000000000000200000000000000010000000000000001000000000000000200000001000000010000000000000001000000020000000300000004000000030000000400000001000000020000000300000005000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000001000000
+    - name: NextTurnSet
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 202.82812
+        y: 103.21875
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: SetFieldDice
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.CallMethod
+        - HutongGames.PlayMaker.Actions.SetIntValue
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0000
+        actionStartIndex: 0000000007000000
+        actionHashCodes: ca51e900603dd905
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Placement
+        fsmObjectParams:
+        - useVariable: 1
+          name: _placementPlayerDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: PlacementPlayerDice
+          value: {fileID: 0}
+        fsmVarParams:
+        - variableName: select_mem_num
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: 
+          objectType: 
+          useVariable: 0
+          type: -1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: act_num
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 000000
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmVar
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 18000000120000000c00000027000000270000000100000001000000100000001000000001000000
+        paramName:
+        - behaviour
+        - methodName
+        - parameters
+        - 
+        - storeResult
+        - everyFrame
+        - manualUI
+        - intVariable
+        - intValue
+        - everyFrame
+        paramDataPos: 00000000000000000000000000000000010000000000000001000000000000000100000002000000
+        paramByteDataSize: 00000000000000000000000000000000000000000100000001000000000000000000000001000000
+    - name: CheckThroedDice
+      description: 
+      colorIndex: 1
+      position:
+        serializedVersion: 2
+        x: 1462.7734
+        y: 406.95312
+        width: 126
+        height: 64
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: SELECT_1
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: SelectMember1
+        linkStyle: 2
+        linkConstraint: 2
+        colorIndex: 0
+      - fsmEvent:
+          name: SELECT_2
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: SelectMember2
+        linkStyle: 2
+        linkConstraint: 2
+        colorIndex: 0
+      - fsmEvent:
+          name: SELECT_3
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: SelectMember3
+        linkStyle: 2
+        linkConstraint: 2
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetComponent
+        - HutongGames.PlayMaker.Actions.CallMethod
+        - HutongGames.PlayMaker.Actions.BoolTest
+        - HutongGames.PlayMaker.Actions.GetComponent
+        - HutongGames.PlayMaker.Actions.CallMethod
+        - HutongGames.PlayMaker.Actions.BoolTest
+        - HutongGames.PlayMaker.Actions.GetComponent
+        - HutongGames.PlayMaker.Actions.CallMethod
+        - HutongGames.PlayMaker.Actions.BoolTest
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 010101010101010101
+        actionIsOpen: 000000000000000000
+        actionStartIndex: 0000000003000000090000000d00000010000000160000001a0000001d00000023000000
+        actionHashCodes: 04d81402ca51e900a4c8bf0004d81402ca51e900a4c8bf0004d81402ca51e900a4c8bf00
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: _Member_1
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: _Member_2
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: _Member_3
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: GetIsThrowed
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: GetIsThrowed
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: GetIsThrowed
+        fsmObjectParams:
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        - useVariable: 1
+          name: _checkFrameOfThrowedDice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: CheckFrameOfThrowedDice
+          value: {fileID: 0}
+        fsmVarParams:
+        - variableName: is_throwed
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 2
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: is_throwed
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 2
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        - variableName: is_throwed
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 2
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 1
+          name: is_throwed
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: is_throwed
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: is_throwed
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        - SELECT_1
+        - 
+        - SELECT_2
+        - 
+        - SELECT_3
+        byteData: 000000000000000000000000
+        arrayParamSizes: 000000000000000000000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmVar
+        - HutongGames.PlayMaker.FsmVar
+        - HutongGames.PlayMaker.FsmVar
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000180000000100000018000000120000000c0000002700000001000000010000001100000017000000170000000100000014000000180000000100000018000000120000000c0000002700000001000000010000001100000017000000170000000100000014000000180000000100000018000000120000000c00000027000000010000000100000011000000170000001700000001000000
+        paramName:
+        - gameObject
+        - storeComponent
+        - everyFrame
+        - behaviour
+        - methodName
+        - parameters
+        - storeResult
+        - everyFrame
+        - manualUI
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        - gameObject
+        - storeComponent
+        - everyFrame
+        - behaviour
+        - methodName
+        - parameters
+        - storeResult
+        - everyFrame
+        - manualUI
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        - gameObject
+        - storeComponent
+        - everyFrame
+        - behaviour
+        - methodName
+        - parameters
+        - storeResult
+        - everyFrame
+        - manualUI
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        paramDataPos: 000000000000000000000000010000000000000000000000000000000100000002000000000000000000000001000000030000000100000002000000040000000300000001000000010000000100000005000000060000000100000002000000030000000700000002000000040000000800000005000000020000000200000002000000090000000a0000000200000004000000050000000b000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000100000001000000000000000000000000000000010000000000000000000000010000000000000000000000000000000000000001000000010000000000000000000000000000000100000000000000000000000100000000000000000000000000000000000000010000000100000000000000000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -3798,43 +4734,43 @@ MonoBehaviour:
       floatVariables: []
       intVariables:
       - useVariable: 1
+        name: MEM_NUM_1
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: MEM_NUM_2
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 1
+      - useVariable: 1
+        name: MEM_NUM_3
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 2
+      - useVariable: 1
+        name: PARTY_MEM_NUM
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 3
+      - useVariable: 1
         name: act_num
         tooltip: 
         showInInspector: 0
         networkSync: 0
         value: 0
       - useVariable: 1
-        name: mem_No.1
+        name: enemy_hp
         tooltip: 
         showInInspector: 0
         networkSync: 0
         value: 0
-      - useVariable: 1
-        name: mem_No.2
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 1
-      - useVariable: 1
-        name: mem_No.3
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 2
       - useVariable: 1
         name: select_mem_num
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      - useVariable: 1
-        name: party_mem_num
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 3
-      - useVariable: 1
-        name: enemy_hp
         tooltip: 
         showInInspector: 0
         networkSync: 0
@@ -3864,6 +4800,18 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: 0
+      - useVariable: 1
+        name: IS_TEST
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 1
+      - useVariable: 1
+        name: is_throwed
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       stringVariables: []
       vector2Variables: []
       vector3Variables:
@@ -3878,35 +4826,23 @@ MonoBehaviour:
       quaternionVariables: []
       gameObjectVariables:
       - useVariable: 1
+        name: _Arrow
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1414619038}
+      - useVariable: 1
         name: _CloseTab
         tooltip: 
         showInInspector: 1
         networkSync: 0
         value: {fileID: 596070880}
       - useVariable: 1
-        name: _OpenTab
+        name: _Enemy
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 1770245702}
-      - useVariable: 1
-        name: _OtherDiceManager
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: {fileID: 1479942178}
-      - useVariable: 1
-        name: _PlyaerDice
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: {fileID: 0}
-      - useVariable: 1
-        name: _StartText
-        tooltip: 
-        showInInspector: 1
-        networkSync: 0
-        value: {fileID: 238623066}
+        value: {fileID: 1379446479}
       - useVariable: 1
         name: _Member_1
         tooltip: 
@@ -3926,23 +4862,23 @@ MonoBehaviour:
         networkSync: 0
         value: {fileID: 0}
       - useVariable: 1
-        name: _PowGauge
+        name: _MovedDiceFrame
         tooltip: 
-        showInInspector: 1
+        showInInspector: 0
         networkSync: 0
-        value: {fileID: 418643163}
+        value: {fileID: 0}
       - useVariable: 1
-        name: _Arrow
+        name: _OpenTab
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 1414619038}
+        value: {fileID: 1770245702}
       - useVariable: 1
-        name: _PlayerManager
+        name: _OtherDiceManager
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 1578590088}
+        value: {fileID: 1479942178}
       - useVariable: 1
         name: _PartyMemberList
         tooltip: 
@@ -3950,72 +4886,81 @@ MonoBehaviour:
         networkSync: 0
         value: {fileID: 500716219}
       - useVariable: 1
+        name: _PlayerManager
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1578590088}
+      - useVariable: 1
+        name: _PlyaerDice
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: _PowGauge
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 418643163}
+      - useVariable: 1
         name: _SelectFrame
         tooltip: 
         showInInspector: 1
         networkSync: 0
         value: {fileID: 321907735}
       - useVariable: 1
-        name: _Enemy
+        name: _StartText
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 1379446479}
+        value: {fileID: 238623066}
       objectVariables:
       - useVariable: 1
-        name: _placement_player_dice
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        typeName: PlacementPlayerDice
-        value: {fileID: 0}
-      - useVariable: 1
-        name: _party_members
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        typeName: PartyMembers
-        value: {fileID: 0}
-      - useVariable: 1
-        name: _manage_pow
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        typeName: ManagePow
-        value: {fileID: 0}
-      - useVariable: 1
-        name: _arrow_vec
+        name: _arrowVec
         tooltip: 
         showInInspector: 0
         networkSync: 0
         typeName: ArrowVec
         value: {fileID: 0}
       - useVariable: 1
-        name: _enemy_status
+        name: _checkFrameOfThrowedDice
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        typeName: CheckFrameOfThrowedDice
+        value: {fileID: 0}
+      - useVariable: 1
+        name: _enemyStatus
         tooltip: 
         showInInspector: 0
         networkSync: 0
         typeName: EnemyStatus
         value: {fileID: 0}
-      materialVariables: []
-      textureVariables: []
-      arrayVariables:
       - useVariable: 1
-        name: m_MovedDice
+        name: _managePow
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        type: 3
-        objectTypeName: UnityEngine.GameObject
-        floatValues: []
-        intValues: 
-        boolValues: 
-        stringValues: []
-        vector4Values: []
-        objectReferences:
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
+        typeName: ManagePow
+        value: {fileID: 0}
+      - useVariable: 1
+        name: _partyMembers
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        typeName: PartyMembers
+        value: {fileID: 0}
+      - useVariable: 1
+        name: _placementPlayerDice
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        typeName: PlacementPlayerDice
+        value: {fileID: 0}
+      materialVariables: []
+      textureVariables: []
+      arrayVariables:
       - useVariable: 1
         name: m_MemberFrames
         tooltip: 
@@ -4032,6 +4977,19 @@ MonoBehaviour:
         - {fileID: 1229264997}
         - {fileID: 1080394545}
         - {fileID: 882574525}
+      - useVariable: 1
+        name: m_ThrowedDiceFrameNum
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        type: 1
+        objectTypeName: UnityEngine.Object
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences: []
       enumVariables: []
       categories:
       - 
@@ -4042,7 +5000,7 @@ MonoBehaviour:
       - Manage_Object
       - Tab_Object
       - UI_Object
-      variableCategoryIDs: 000000000200000002000000020000000000000002000000070000000300000003000000030000000300000000000000060000000600000005000000040000000700000006000000060000000600000007000000070000000500000005000000060000000400000001000000010000000100000001000000010000000400000006000000
+      variableCategoryIDs: 02000000020000000200000002000000000000000700000000000000030000000300000003000000030000000300000003000000000000000700000006000000040000000600000006000000060000000400000006000000050000000500000005000000040000000700000006000000070000000100000001000000010000000100000001000000010000000600000004000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -4099,6 +5057,7 @@ GameObject:
   - component: {fileID: 882574528}
   - component: {fileID: 882574527}
   - component: {fileID: 882574529}
+  - component: {fileID: 882574530}
   m_Layer: 0
   m_Name: member_frame_3
   m_TagString: TabFrame3
@@ -4209,6 +5168,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mem_num: 2
+--- !u!114 &882574530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882574525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1301675782b502342b9a6c241c1c52a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &885115369 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7794770202375929866, guid: c8a74d3f6178f27469ee3767beff339f,
@@ -4379,6 +5350,7 @@ GameObject:
   - component: {fileID: 1080394548}
   - component: {fileID: 1080394547}
   - component: {fileID: 1080394549}
+  - component: {fileID: 1080394550}
   m_Layer: 0
   m_Name: member_frame_2
   m_TagString: TabFrame2
@@ -4489,6 +5461,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mem_num: 1
+--- !u!114 &1080394550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080394545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1301675782b502342b9a6c241c1c52a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1229264997
 GameObject:
   m_ObjectHideFlags: 0
@@ -4501,6 +5485,7 @@ GameObject:
   - component: {fileID: 1229265001}
   - component: {fileID: 1229265000}
   - component: {fileID: 1229264999}
+  - component: {fileID: 1229265002}
   m_Layer: 0
   m_Name: member_frame_1
   m_TagString: TabFrame1
@@ -4611,6 +5596,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1229265002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229264997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1301675782b502342b9a6c241c1c52a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1379446479
 GameObject:
   m_ObjectHideFlags: 0
