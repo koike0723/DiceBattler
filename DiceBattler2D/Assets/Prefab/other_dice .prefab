@@ -183,7 +183,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   high_verocity_val: 5
-  low_verocity_val: 0.0005
+  low_verocity_val: 0.01
   frame_num_high: 15
   frame_num_low: 100
 --- !u!114 &-5487700820625500060

@@ -8,34 +8,31 @@ public class AtackPlayer : MonoBehaviour
 	private EnemyStatus _enemyStatus = default;
 
 	private Rigidbody2D _rigidbody2D = default;
-	private ThrowDice _throwDice = default;
-	private bool is_damage = default;
 
-	private AreaCircle _area_circle = default;
-	private DiceStatus _dice_status = default;
+	private AreaCircle _areaCircle = default;
+	private DiceStatus _diceStatus = default;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+	// Start is called before the first frame update
+	void Start()
+	{
 		_Enemy = GameObject.FindGameObjectWithTag("Enemy");
 
 		_enemyStatus = _Enemy.GetComponent<EnemyStatus>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
-		_throwDice = GetComponent<ThrowDice>();
-		_area_circle = transform.Find("area_circle").gameObject.GetComponent<AreaCircle>();
-		_dice_status = GetComponent<DiceStatus>();
+		_areaCircle = transform.Find("area_circle").gameObject.GetComponent<AreaCircle>();
+		_diceStatus = GetComponent<DiceStatus>();
 
-		is_damage = false;
-    }
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-		if (_area_circle.is_action && !is_damage)
-		{
-			int dmg = (_area_circle.del_dice_num * _dice_status.atk * 10) + (_dice_status.atk * _area_circle.dice_element_val);
-			_enemyStatus.Damage(dmg);
-			is_damage = true;
-		}
-    }
+	// Update is called once per frame
+	void Update()
+	{
+		
+	}
+
+	public void AtackPlayerToEnemy()
+	{
+		int dmg = (_areaCircle.del_dice_num * _diceStatus.atk * 10) + (_diceStatus.atk * _areaCircle.dice_element_val);
+		_enemyStatus.Damage(dmg);
+	}
 }
