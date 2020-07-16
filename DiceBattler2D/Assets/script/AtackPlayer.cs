@@ -34,5 +34,6 @@ public class AtackPlayer : MonoBehaviour
 	{
 		int dmg = (_areaCircle.del_dice_num * _diceStatus.atk * 10) + (_diceStatus.atk * _areaCircle.dice_element_val);
 		_enemyStatus.Damage(dmg);
+		
 	}
 }
