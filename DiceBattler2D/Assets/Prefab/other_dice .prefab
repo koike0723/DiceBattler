@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4981393423113604680}
   - component: {fileID: 4981393423113604681}
   - component: {fileID: -5487700820625500060}
+  - component: {fileID: 9157193185086963142}
   m_Layer: 0
   m_Name: 'other_dice '
   m_TagString: other_dice
@@ -164,17 +165,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 6
-      outSlope: 6
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 6
-      inSlope: 6
-      outSlope: 6
+      value: 0
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -200,3 +201,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_contact: 0
   is_stay_area: 0
+--- !u!114 &9157193185086963142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4981393423113604682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb5976e0c6746214b8aab320e0d52683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ParticleLightBall: {fileID: 1481325616073923181, guid: 95694f9466f5edb41af3587b0c544419,
+    type: 3}

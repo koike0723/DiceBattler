@@ -5,6 +5,8 @@ using UnityEngine;
 public class AtackPlayer : MonoBehaviour
 {
 	private GameObject _Enemy = default;
+	[SerializeField]
+	private GameObject _ParticleSlash = default;
 	private EnemyStatus _enemyStatus = default;
 
 	private Rigidbody2D _rigidbody2D = default;
@@ -34,6 +36,7 @@ public class AtackPlayer : MonoBehaviour
 	{
 		int dmg = (_areaCircle.del_dice_num * _diceStatus.atk * 10) + (_diceStatus.atk * _areaCircle.dice_element_val);
 		_enemyStatus.Damage(dmg);
+		Instantiate(_ParticleSlash, _Enemy.transform.position, Quaternion.identity);
 		
 	}
 }

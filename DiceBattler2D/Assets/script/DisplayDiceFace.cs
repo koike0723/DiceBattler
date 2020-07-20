@@ -8,6 +8,10 @@ public class DisplayDiceFace : MonoBehaviour
 	private DiceStatus _diceStatus = default;
 	private Rigidbody2D _rigdbody2D = default;
 
+	//x:0～1,y:0～5.99
+	[SerializeField]
+	private AnimationCurve curve_face = default;
+
 	//高速度基準値
 	[SerializeField]
 	private float high_verocity_val = 5.0f;
@@ -60,14 +64,14 @@ public class DisplayDiceFace : MonoBehaviour
 		{
 			if (frame_cnt % frame_num_high == 0)
 			{
-				face_element_num = Random.Range(0, DiceStatus.face_num * 100) % DiceStatus.face_num;
+				face_element_num = (int)CurveWaighteRandom(curve_face);
 			}
 		}
 		else if (_rigdbody2D.velocity.magnitude > low_verocity_val)
 		{
 			if (frame_cnt % frame_num_low == 0)
 			{
-				face_element_num = Random.Range(0, DiceStatus.face_num * 100) % DiceStatus.face_num;
+				face_element_num = (int)CurveWaighteRandom(curve_face);
 			}
 		}
 		else if (_rigdbody2D.velocity.magnitude < low_verocity_val)
@@ -77,5 +81,11 @@ public class DisplayDiceFace : MonoBehaviour
 		}
 
 		return face_element_num;
+	}
+
+	//アニメーションカーブに設定したyの範囲内の数値をランダムで返す
+	public float CurveWaighteRandom(AnimationCurve curve)
+	{
+		return curve.Evaluate(Random.value);
 	}
 }

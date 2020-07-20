@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FaceRandomize: MonoBehaviour
 {
-	public AnimationCurve curve_face = default;
+	//x:0～1,y:0～5.99
+	[SerializeField]
+	private AnimationCurve curve_face = default;
 
 	//高速度基準値
 	[SerializeField]

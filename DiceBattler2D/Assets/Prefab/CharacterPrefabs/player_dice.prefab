@@ -277,6 +277,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cdb87eabb53134096f3a46b4de58ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curve_face:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.004166667
+      value: 0.002352941
+      inSlope: 5.962802
+      outSlope: 5.962802
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 5.99
+      inSlope: 5.962802
+      outSlope: 5.962802
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   high_verocity_val: 5
   low_verocity_val: 0.005
   frame_num_high: 15
@@ -293,6 +317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310a7e7f9ed935640a1fc5964656b5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ParticleSlash: {fileID: 8163213724206723526, guid: 1514037897599a24cb4afd73921c3689,
+    type: 3}
 --- !u!114 &3692111958105332666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,4 +462,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   del_dice_num: 0
   dice_element_val: 0
-  is_action: 0
+  FSM_reference_name: TurnStateController
+  variavle_name: is_played
