@@ -23,10 +23,7 @@ public class CheckStopOtherDIce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsSleepAllDice())
-        {
-            SetVariable();
-        }
+       
     }
 
     void FixedUpdate()
@@ -41,6 +38,11 @@ public class CheckStopOtherDIce : MonoBehaviour
                 is_sleep_dices[clone_num] = true;
             }
             clone_num++;
+        }
+
+        if (IsSleepAllDice())
+        {
+            SetVariable();
         }
     }
 

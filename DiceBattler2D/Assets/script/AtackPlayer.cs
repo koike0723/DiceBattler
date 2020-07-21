@@ -6,7 +6,7 @@ public class AtackPlayer : MonoBehaviour
 {
 	private GameObject _Enemy = default;
 	[SerializeField]
-	private GameObject _ParticleSlash = default;
+	private GameObject _DamageEffectParticle = default;
 	private EnemyStatus _enemyStatus = default;
 
 	private Rigidbody2D _rigidbody2D = default;
@@ -34,9 +34,14 @@ public class AtackPlayer : MonoBehaviour
 
 	public void AtackPlayerToEnemy()
 	{
-		int dmg = (_areaCircle.del_dice_num * _diceStatus.atk * 10) + (_diceStatus.atk * _areaCircle.dice_element_val);
+		int dmg = CalcDamage();
 		_enemyStatus.Damage(dmg);
-		Instantiate(_ParticleSlash, _Enemy.transform.position, Quaternion.identity);
+		Instantiate(_DamageEffectParticle, _Enemy.transform.position, Quaternion.identity);
+	}
+
+	public int CalcDamage()
+	{
 		
+		return (_areaCircle.del_dice_num * _diceStatus.atk * 10) + (_diceStatus.atk * _areaCircle.dice_element_val);
 	}
 }

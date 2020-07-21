@@ -45,18 +45,15 @@ public class AreaCircle : MonoBehaviour
 	//自身の動きが止まった時範囲内にあるかつ自身の面と同じ面のフィールドダイスを削除
 	private void OnTriggerStay2D(Collider2D other_dice)
 	{
-		if(other_dice.CompareTag("other_dice"))
+		if(_rigidbody2D.velocity.normalized.magnitude == 0 && other_dice.CompareTag("other_dice"))
 		{
-			if(_rigidbody2D.velocity.normalized.magnitude == 0)
+			var other_dice_val = other_dice.GetComponent<DiceStatus>().GetElementVal();
+			if (!is_played && other_dice_val == _diceStatus.GetElementVal())
 			{
-				if(other_dice.GetComponent<DiceStatus>().GetElementVal() == _diceStatus.GetElementVal())
-				{
-					//削除したフィールドダイスの面に表示されている数値を取得
-					dice_element_val = _diceStatus.GetElementVal();
-					PlayEffectOtherDice();
-					SetVariable();
-					is_played = true;
-				}
+				dice_element_val = _diceStatus.GetElementVal();
+				PlayEffectOtherDice();
+				SetVariable();
+				is_played = true;
 			}
 		}
 	}
@@ -84,27 +81,27 @@ public class AreaCircle : MonoBehaviour
 	//接触したことのあるフィールドダイスのエフェクトを表示
 	private void PlayEffectOtherDice()
 	{
-		if(!is_played)
+		var clones = GameObject.FindGameObjectsWithTag("other_dice");
+		foreach (var clone in clones)
 		{
-			var clones = GameObject.FindGameObjectsWithTag("other_dice");
-			foreach (var clone in clones)
+			var contact_dice = clone.GetComponent<ContactDice>();
+			var play_effect = clone.GetComponent<PlayOtherDiceEffect>();
+			var other_dice_val = clone.GetComponent<DiceStatus>().GetElementVal();
+			if (contact_dice.is_contact && contact_dice.is_stay_area)
 			{
-				var _contact_dice = clone.GetComponent<ContactDice>();
-				var _play_effect = clone.GetComponent<PlayOtherDiceEffect>();
-				if (_contact_dice.is_contact && _contact_dice.is_stay_area)
-				{
-					_play_effect.PlayEffect();
-					del_dice_num += 1;
-				}
-				else if (_contact_dice.is_stay_area)
-				{
-					_play_effect.PlayEffect();
-					del_dice_num += 1;
-				}
+				play_effect.PlayEffect();
+				del_dice_num += 1;
+			}
+			else if (contact_dice.is_stay_area && other_dice_val == _diceStatus.GetElementVal())
+			{
+				play_effect.PlayEffect();
+				del_dice_num += 1;
 			}
 		}
 	}
 
+
+	//ステート遷移用フラグをtrue
 	public void SetVariable()
 	{
 		foreach (PlayMakerFSM fsm in FSMs)

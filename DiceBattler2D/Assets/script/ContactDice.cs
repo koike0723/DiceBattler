@@ -31,4 +31,13 @@ public class ContactDice : MonoBehaviour
 			is_contact = true;
 		}
 	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			_srenderer.color = new Color32(159, 164, 250, 255);
+			is_contact = true;
+		}
+	}
 }

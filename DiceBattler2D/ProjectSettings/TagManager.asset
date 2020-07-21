@@ -15,6 +15,7 @@ TagManager:
   - TabFrame1
   - TabFrame2
   - TabFrame3
+  - AreaCircle
   layers:
   - Default
   - TransparentFX

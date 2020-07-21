@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 3412583735064844687}
   - component: {fileID: 3692111958105332666}
   - component: {fileID: 3692111958105332658}
+  - component: {fileID: 4315155786860632362}
   m_Layer: 0
   m_Name: player_dice
   m_TagString: Player
@@ -200,11 +201,11 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 3
+  m_LinearDrag: 2
   m_AngularDrag: 3
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
@@ -281,10 +282,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.004166667
-      value: 0.002352941
-      inSlope: 5.962802
-      outSlope: 5.962802
+      time: 0
+      value: 0
+      inSlope: 5.99
+      outSlope: 5.99
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -292,8 +293,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 5.99
-      inSlope: 5.962802
-      outSlope: 5.962802
+      inSlope: 5.99
+      outSlope: 5.99
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -317,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310a7e7f9ed935640a1fc5964656b5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ParticleSlash: {fileID: 8163213724206723526, guid: 1514037897599a24cb4afd73921c3689,
+  _DamageEffectParticle: {fileID: 8163213724206723526, guid: 1514037897599a24cb4afd73921c3689,
     type: 3}
 --- !u!114 &3692111958105332666
 MonoBehaviour:
@@ -349,6 +350,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FSM_reference_name: TurnStateController
   variavle_name: is_moving
+--- !u!114 &4315155786860632362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692111958105332667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167f7bda76fb0584d821de3b24973135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8745034710240802476
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +376,7 @@ GameObject:
   - component: {fileID: 8409787939624248611}
   m_Layer: 0
   m_Name: area_circle
-  m_TagString: Untagged
+  m_TagString: AreaCircle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

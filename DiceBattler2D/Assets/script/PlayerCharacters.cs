@@ -9,12 +9,17 @@ public class PlayerCharacters : MonoBehaviour
     [SerializeField]
     private GameObject[] m_CharacterPrefabs = new GameObject[all_chara_num];
     [SerializeField]
-    private Sprite[] m_CharacterImages = new Sprite[all_chara_num];
+    private Sprite[] m_characterImages = new Sprite[all_chara_num];
+    private DiceStatus[] m_diceStatuses = new DiceStatus[all_chara_num];
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        int count = 0;
+        foreach (var prefab in m_CharacterPrefabs)
+        {
+            m_diceStatuses[count++] = prefab.GetComponent<DiceStatus>();
+        }
     }
 
     // Update is called once per frame
@@ -30,6 +35,6 @@ public class PlayerCharacters : MonoBehaviour
 
     public Sprite GetCharacterImage(int chara_num)
     {
-        return m_CharacterImages[chara_num];
+        return m_characterImages[chara_num];
     }
 }

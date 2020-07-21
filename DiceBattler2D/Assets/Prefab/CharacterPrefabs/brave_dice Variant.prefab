@@ -106,27 +106,27 @@ PrefabInstance:
     - target: {fileID: 4963738523089421282, guid: e4d6dc56bcd16d3469ccdc27ea9a89e6,
         type: 3}
       propertyPath: curve_face.m_Curve.Array.data[0].inSlope
-      value: 0
+      value: 5.99
       objectReference: {fileID: 0}
     - target: {fileID: 4963738523089421282, guid: e4d6dc56bcd16d3469ccdc27ea9a89e6,
         type: 3}
       propertyPath: curve_face.m_Curve.Array.data[0].outSlope
-      value: 0
+      value: 5.99
       objectReference: {fileID: 0}
     - target: {fileID: 4963738523089421282, guid: e4d6dc56bcd16d3469ccdc27ea9a89e6,
         type: 3}
       propertyPath: curve_face.m_Curve.Array.data[1].value
-      value: 0
+      value: 5.99
       objectReference: {fileID: 0}
     - target: {fileID: 4963738523089421282, guid: e4d6dc56bcd16d3469ccdc27ea9a89e6,
         type: 3}
       propertyPath: curve_face.m_Curve.Array.data[1].inSlope
-      value: 0
+      value: 5.99
       objectReference: {fileID: 0}
     - target: {fileID: 4963738523089421282, guid: e4d6dc56bcd16d3469ccdc27ea9a89e6,
         type: 3}
       propertyPath: curve_face.m_Curve.Array.data[1].outSlope
-      value: 0
+      value: 5.99
       objectReference: {fileID: 0}
     - target: {fileID: 4963738523089421282, guid: e4d6dc56bcd16d3469ccdc27ea9a89e6,
         type: 3}
