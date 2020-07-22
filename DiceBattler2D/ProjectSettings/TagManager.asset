@@ -16,6 +16,7 @@ TagManager:
   - TabFrame2
   - TabFrame3
   - AreaCircle
+  - PartyHP
   layers:
   - Default
   - TransparentFX

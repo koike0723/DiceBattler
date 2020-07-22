@@ -13,7 +13,7 @@ public class SetCharaImage : MonoBehaviour
     private SpriteRenderer _spriteRenderer = default;
 
     [SerializeField]
-    private int mem_num = 0;
+    private int frame_num = 0;
 
     private void Awake()
     {
@@ -28,7 +28,7 @@ public class SetCharaImage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _spriteRenderer.sprite = _playerCharacters.GetCharacterImage(_partyMembers.party_member[mem_num]);
+        _spriteRenderer.sprite = _playerCharacters.GetCharacterImage(_partyMembers.party_member[frame_num]);
     }
 
     // Update is called once per frame

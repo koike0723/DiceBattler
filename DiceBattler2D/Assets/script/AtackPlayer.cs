@@ -35,7 +35,7 @@ public class AtackPlayer : MonoBehaviour
 	public void AtackPlayerToEnemy()
 	{
 		int dmg = CalcDamage();
-		_enemyStatus.Damage(dmg);
+		_enemyStatus.DamageEnemy(dmg);
 		Instantiate(_DamageEffectParticle, _Enemy.transform.position, Quaternion.identity);
 	}
 

@@ -37,4 +37,8 @@ public class PlayerCharacters : MonoBehaviour
     {
         return m_characterImages[chara_num];
     }
+    public DiceStatus GetCharacterStatus(int chara_num)
+    {
+        return m_diceStatuses[chara_num];
+    }
 }

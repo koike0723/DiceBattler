@@ -40,6 +40,6 @@ public class PlacementPlayerDice : MonoBehaviour
         {
             GameObject.Destroy(player_dice);
         }
-        GameObject.Instantiate(_playerCharacters.GetCharacterPrefab(_partyMembers.party_member[mem_num]));
+        GameObject.Instantiate(_playerCharacters.GetCharacterPrefab(mem_num));
     }
 }

@@ -27,7 +27,7 @@ public class EnemyStatus : MonoBehaviour
 		return enemy_hp;
 	}
 
-	public void Damage(int damage)
+	public void DamageEnemy(int damage)
 	{
 		enemy_hp -= damage;
 	}

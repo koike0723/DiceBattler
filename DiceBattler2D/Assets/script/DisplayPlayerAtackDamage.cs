@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DisplayDamage : MonoBehaviour
+public class DisplayPlayerAtackDamage : MonoBehaviour
 {
     [SerializeField]
     private GameObject _ValText = default;
