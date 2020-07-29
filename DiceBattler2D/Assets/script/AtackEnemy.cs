@@ -7,6 +7,12 @@ public class AtackEnemy : MonoBehaviour
     private GameObject _PartyHP = default;
     private ManagePlayerHP _managePlayerHP= default;
 
+    private GameObject _NoticeDice = default;
+    private CountOtherDice _countOtherDice = default;
+
+    private DiceStatus _noticeDiceStatus = default;
+    private DiceStatus _enemyDiceStatus = default;
+
     [SerializeField]
     private GameObject _DamageEffectParticle = default;
 
@@ -15,6 +21,12 @@ public class AtackEnemy : MonoBehaviour
     {
         _PartyHP = GameObject.FindGameObjectWithTag("PartyHP");
         _managePlayerHP = _PartyHP.GetComponent<ManagePlayerHP>();
+
+        _NoticeDice = GameObject.FindGameObjectWithTag("NoticeDice");
+        _countOtherDice = _NoticeDice.GetComponent<CountOtherDice>();
+        _noticeDiceStatus = _NoticeDice.GetComponent<DiceStatus>();
+
+        _enemyDiceStatus = this.GetComponent<DiceStatus>();
     }
 
     // Update is called once per frame
@@ -33,6 +45,6 @@ public class AtackEnemy : MonoBehaviour
     public int CalcDamage()
     {
 
-        return 10;
+        return (_countOtherDice.other_dice_count * _enemyDiceStatus.atk * 10) + (_enemyDiceStatus.atk * _noticeDiceStatus.GetElementVal());
     }
 }

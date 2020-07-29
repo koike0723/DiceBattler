@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class CountOtherDice: MonoBehaviour
 {
-	public int other_dice_count;
+	private DiceStatus _diceStatus = default;
+	private List<GameObject> m_OtherDice = default;
+
+	public int other_dice_count = default;
 
 	// Start is called before the first frame update
 	void Start()
     {
+		_diceStatus = this.GetComponent<DiceStatus>();
 		other_dice_count = 0;
+
+		m_OtherDice = new List<GameObject>();
 	}
 
 	// Update is called once per frame
@@ -23,14 +29,22 @@ public class CountOtherDice: MonoBehaviour
 		var clones = GameObject.FindGameObjectsWithTag("other_dice");
 		foreach (var clone in clones)
 		{
-			other_dice_count++;
-			Debug.Log(other_dice_count);
+			if (clone.GetComponent<DiceStatus>().GetElementVal() == _diceStatus.GetElementVal())
+			{
+				m_OtherDice.Add(clone);
+			}
 		}
+		other_dice_count = m_OtherDice.Count;
+
 		return other_dice_count;
 	}
 
-	public void Reset()
-	{
+	public void DelOtherDice()
+	{ 
+		foreach(var dice in m_OtherDice)
+		{
+			dice.GetComponent<PlayOtherDiceEffect>().PlayEffect();
+		}
 		other_dice_count = 0;
 	}
 }

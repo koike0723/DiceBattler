@@ -34,24 +34,6 @@ public class GenerateDice : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-		{
-			other_dice_num = _count.Count();
-			if(set_dice_max > other_dice_num)
-			{
-				Generate(set_dice_max - other_dice_num);
-				Throw();
-			}
-		}
-		if(Input.GetKeyUp(KeyCode.Space))
-		{
-			_count.Reset();
-		}
-		if (Input.GetKey(KeyCode.KeypadEnter))
-		{
-			Delete();
-		}
-
     }
 
 	public void Generate(int dice_num)

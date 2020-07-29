@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class NoticeDiceNum : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _NoticeDice = default;
-    private DiceStatus _diceface = default;
+	[SerializeField]
+	private GameObject _NoticeDice = default;
+	private DiceStatus _diceface = default;
 
-    //x:0～1,y:0～5.99
-    [SerializeField]
-    private AnimationCurve curve_face = default;
+	//x:0～1,y:0～5.99
+	[SerializeField]
+	private AnimationCurve curve_face = default;
 	//高速面変化フレーム
 	[SerializeField]
 	private int frame_num_high = 15;
@@ -30,22 +30,40 @@ public class NoticeDiceNum : MonoBehaviour
 
 	private bool is_stop = default;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        _diceface = _NoticeDice.GetComponent<DiceStatus>();
-		is_stop = false;
-    }
+	//FSMを持つゲームオブジェクト
+	private GameObject _BattleStateMachine;
+	// 呼び出したいFSM名  
+	private string FSM_reference_name;
+	// 変更したい変数名
+	[SerializeField, Header("FSM用bool変数名")]
+	private string variavle_name;
+	private PlayMakerFSM[] FSMs;
 
-    // Update is called once per frame
-    void Update()
-    {
-		if(!is_stop)
+	// Start is called before the first frame update
+	void Start()
+	{
+		_diceface = _NoticeDice.GetComponent<DiceStatus>();
+		_BattleStateMachine = GameObject.FindGameObjectWithTag("BattleStateMachine");
+		FSMs = _BattleStateMachine.GetComponents<PlayMakerFSM>();
+		FSM_reference_name = "TurnStateController";
+		is_stop = false;
+	}
+
+	private void OnEnable()
+	{
+		is_stop = false;
+		frame_cnt = 0;
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
+		if (!is_stop)
 		{
 			Randomize();
 			frame_cnt++;
 		}
-    }
+	}
 
 	public void Randomize()
 	{
@@ -63,16 +81,30 @@ public class NoticeDiceNum : MonoBehaviour
 				face_element_num = (int)CurveWaighteRandom(curve_face);
 			}
 		}
-		else if(frame_cnt >= frame_cnt_line_2)
+		else if (frame_cnt >= frame_cnt_line_2)
 		{
 			frame_cnt = 0;
 			is_stop = true;
+			SetVariable();
 		}
 		_diceface.SetSprite(face_element_num);
 	}
 
 	public float CurveWaighteRandom(AnimationCurve curve)
-    {
-        return curve.Evaluate(Random.value);
-    }
+	{
+		return curve.Evaluate(Random.value);
+	}
+
+	void SetVariable()
+	{
+		foreach (PlayMakerFSM fsm in FSMs)
+		{
+			if (fsm.FsmName == FSM_reference_name)
+			{
+				// 変数のSet  
+				fsm.FsmVariables.GetFsmBool(variavle_name).Value = true;
+			}
+		}
+	}
 }
+

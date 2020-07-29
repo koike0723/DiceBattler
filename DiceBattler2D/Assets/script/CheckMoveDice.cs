@@ -8,10 +8,9 @@ public class CheckMoveDice : MonoBehaviour
     //FSMを持つゲームオブジェクト
     private GameObject _BattleStateMachine = default;
     // 呼び出したいFSM名  
-    [SerializeField]
     private string FSM_reference_name = default;
     // 変更したい変数名  
-    [SerializeField]
+    [SerializeField,Header("FSM用flg変数")]
     private string variavle_name = default;
     private PlayMakerFSM[] FSMs = default;
 
@@ -23,6 +22,7 @@ public class CheckMoveDice : MonoBehaviour
         //gameobjectの取得をplayerdiceの生成後行いたいためstartで処理
         _BattleStateMachine = GameObject.FindGameObjectWithTag("BattleStateMachine");
         FSMs = _BattleStateMachine.GetComponents<PlayMakerFSM>();
+        FSM_reference_name = "TurnStateController";
     }
 
     private void OnEnable()

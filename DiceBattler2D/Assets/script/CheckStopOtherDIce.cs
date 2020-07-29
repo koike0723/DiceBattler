@@ -6,18 +6,21 @@ public class CheckStopOtherDIce : MonoBehaviour
 {
     private bool[] is_sleep_dices;
     //FSMを持つゲームオブジェクト
-    public GameObject batle_state_machine;
+    private GameObject _BattleStateMachine;
     // 呼び出したいFSM名  
-    public string FSM_reference_name;
+    private string FSM_reference_name;
     // 変更したい変数名  
-    public string variavle_name;
+    [SerializeField, Header("FSM用flg変数")]
+    private string variavle_name;
     private PlayMakerFSM[] FSMs;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        FSMs = batle_state_machine.GetComponents<PlayMakerFSM>();
+        _BattleStateMachine = GameObject.FindGameObjectWithTag("BattleStateMachine");
+        FSMs = _BattleStateMachine.GetComponents<PlayMakerFSM>();
+        FSM_reference_name = "TurnStateController";
     }
 
     // Update is called once per frame
