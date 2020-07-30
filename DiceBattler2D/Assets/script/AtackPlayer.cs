@@ -21,7 +21,7 @@ public class AtackPlayer : MonoBehaviour
 
 		_enemyStatus = _Enemy.GetComponent<EnemyStatus>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
-		_areaCircle = transform.Find("area_circle").gameObject.GetComponent<AreaCircle>();
+		_areaCircle = transform.parent.transform.Find("area_circle").gameObject.GetComponent<AreaCircle>();
 		_diceStatus = GetComponent<DiceStatus>();
 
 	}

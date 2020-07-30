@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class ThrowDice : MonoBehaviour
 {
 	//初期化用位置
@@ -79,7 +78,7 @@ public class ThrowDice : MonoBehaviour
 	private void Awake()
 	{
 		//各種コンポーネント取得
-		_AreaCircle = transform.Find("area_circle").gameObject;
+		_AreaCircle = transform.parent.transform.Find("area_circle").gameObject;
 		_transform = GetComponent<Transform>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
 		_collider2D = GetComponent<Collider2D>();

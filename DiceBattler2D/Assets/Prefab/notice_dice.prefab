@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &830361380938126397
+--- !u!1 &3338849372432976508
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8167770535126630194}
-  - component: {fileID: 6795112362469438277}
-  - component: {fileID: 3620220136902689810}
-  - component: {fileID: 1298011565543800506}
-  - component: {fileID: 1742058233671742008}
-  - component: {fileID: 3945676802313428723}
+  - component: {fileID: 3338849372432976496}
+  - component: {fileID: 3338849372432976499}
+  - component: {fileID: 3338849372432976498}
+  - component: {fileID: 3338849372432976509}
+  - component: {fileID: 3338849372432976497}
   m_Layer: 0
   m_Name: notice_dice
   m_TagString: NoticeDice
@@ -21,13 +20,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8167770535126630194
+--- !u!4 &3338849372432976496
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830361380938126397}
+  m_GameObject: {fileID: 3338849372432976508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.5, y: 8.5, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
@@ -35,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6795112362469438277
+--- !u!212 &3338849372432976499
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830361380938126397}
+  m_GameObject: {fileID: 3338849372432976508}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2006876925
+  m_SortingLayer: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 39516445742236537, guid: 8fc4fc51063ae3640987149f6819eeb8, type: 3}
   m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
   m_FlipX: 0
@@ -85,13 +84,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3620220136902689810
+--- !u!114 &3338849372432976498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830361380938126397}
+  m_GameObject: {fileID: 3338849372432976508}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ee7fa588a9bb0441b9a5f5c2a1e7c35, type: 3}
@@ -108,73 +107,29 @@ MonoBehaviour:
   dice_hp: 0
   hp_max: 0
   atk: 0
---- !u!114 &1298011565543800506
+--- !u!114 &3338849372432976509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830361380938126397}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7e79864415de947a6a2110f2c0bc11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _NoticeDice: {fileID: 830361380938126397}
-  curve_face:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 5.99
-      outSlope: 5.99
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 5.99
-      inSlope: 5.99
-      outSlope: 5.99
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  frame_num_high: 15
-  frame_num_low: 100
-  frame_cnt_line_1: 400
-  frame_cnt_line_2: 700
-  variavle_name: is_stop_notice
---- !u!114 &1742058233671742008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830361380938126397}
+  m_GameObject: {fileID: 3338849372432976508}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3985db4fa7990534c9542ebee829547f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DelOtherDicese: []
   other_dice_count: 0
---- !u!114 &3945676802313428723
+--- !u!114 &3338849372432976497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830361380938126397}
+  m_GameObject: {fileID: 3338849372432976508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3985db4fa7990534c9542ebee829547f, type: 3}
+  m_Script: {fileID: 11500000, guid: fbfbe887db6c1ee40b1251fdb7af57c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DelOtherDicese: []
-  other_dice_count: 0
+  _EffectNoticeDice: {fileID: 0}

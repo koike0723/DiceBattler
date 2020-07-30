@@ -89,12 +89,12 @@ public class AreaCircle : MonoBehaviour
 			var other_dice_val = clone.GetComponent<DiceStatus>().GetElementVal();
 			if (contact_dice.is_contact && contact_dice.is_stay_area)
 			{
-				play_effect.PlayEffect();
+				play_effect.PlayLightBall();
 				del_dice_num += 1;
 			}
 			else if (contact_dice.is_stay_area && other_dice_val == _diceStatus.GetElementVal())
 			{
-				play_effect.PlayEffect();
+				play_effect.PlayLightBall();
 				del_dice_num += 1;
 			}
 		}

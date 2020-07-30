@@ -18,7 +18,7 @@ public class PlayerCharacters : MonoBehaviour
         int count = 0;
         foreach (var prefab in m_CharacterPrefabs)
         {
-            m_diceStatuses[count++] = prefab.GetComponent<DiceStatus>();
+            m_diceStatuses[count++] = prefab.transform.Find("dice").GetComponent<DiceStatus>();
         }
     }
 

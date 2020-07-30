@@ -6,14 +6,21 @@ public class PlayOtherDiceEffect : MonoBehaviour
 {
     [SerializeField]
     private GameObject _ParticleLightBall = default;
-    private StopedEffect _stopedEffect = default;
-    private GameObject _InstantParticle = default;
+    private StopedEffect _stopedLightBall = default;
+    private GameObject _InstantLightBall = default;
+    private bool is_play_lightball = default;
 
-    private bool is_play_effect = default;
+    [SerializeField]
+    private GameObject _ParticleHexShield = default;
+    private StopedEffect _stopedHexShield = default;
+    private GameObject _InstantHexShield = default;
+    private bool is_play_hexshield = default;
+
 
     private void Awake()
     {
-        is_play_effect = false;
+        is_play_lightball = false;
+        is_play_hexshield = false;
     }
 
     // Start is called before the first frame update
@@ -25,23 +32,40 @@ public class PlayOtherDiceEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(is_play_effect)
+        if(is_play_lightball)
         {
-            if (_stopedEffect.is_stop)
+            if (_stopedLightBall.is_stop)
             {
                 Destroy(this.gameObject);
-                Destroy(_InstantParticle);
-                is_play_effect = false;
+                Destroy(_InstantLightBall);
+                is_play_lightball = false;
+            }
+        }
+
+        if(is_play_hexshield)
+        {
+            if(_stopedHexShield.is_stop)
+            {
+                Destroy(_InstantHexShield);
+                is_play_hexshield = false;
             }
         }
     }
 
-    public void PlayEffect()
+    public void PlayLightBall()
     {
         var parent = this.transform;
-        _InstantParticle = Instantiate(_ParticleLightBall, parent.position, Quaternion.identity);
-        _stopedEffect = _InstantParticle.GetComponent<StopedEffect>();
-        is_play_effect = true;
+        _InstantLightBall = Instantiate(_ParticleLightBall, parent.position, Quaternion.identity);
+        _stopedLightBall = _InstantLightBall.GetComponent<StopedEffect>();
+        is_play_lightball = true;
+    }
+
+    public void PlayHexShield()
+    {
+        var parent = this.transform;
+        _InstantHexShield = Instantiate(_ParticleHexShield, parent.position, Quaternion.identity);
+        _stopedHexShield = _InstantHexShield.GetComponent<StopedEffect>();
+        is_play_hexshield = true;
     }
 
 }

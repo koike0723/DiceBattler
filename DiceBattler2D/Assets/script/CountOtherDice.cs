@@ -29,9 +29,18 @@ public class CountOtherDice: MonoBehaviour
 		var clones = GameObject.FindGameObjectsWithTag("other_dice");
 		foreach (var clone in clones)
 		{
-			if (clone.GetComponent<DiceStatus>().GetElementVal() == _diceStatus.GetElementVal())
+			var status = clone.GetComponent<DiceStatus>();
+			if (status.GetElementVal() == _diceStatus.GetElementVal())
 			{
-				m_OtherDice.Add(clone);
+				var contact = clone.GetComponent<ContactDice>();
+				if (!contact.is_contact)
+				{
+					m_OtherDice.Add(clone);
+				}
+				else
+				{
+					clone.GetComponent<PlayOtherDiceEffect>().PlayHexShield();
+				}
 			}
 		}
 		other_dice_count = m_OtherDice.Count;
@@ -43,8 +52,8 @@ public class CountOtherDice: MonoBehaviour
 	{ 
 		foreach(var dice in m_OtherDice)
 		{
-			dice.GetComponent<PlayOtherDiceEffect>().PlayEffect();
+			dice.GetComponent<PlayOtherDiceEffect>().PlayLightBall();
 		}
-		other_dice_count = 0;
+		m_OtherDice.Clear();
 	}
 }

@@ -8,7 +8,7 @@ public class EnemyStatus : MonoBehaviour
 	private int enemy_hp = 0;
 	public int hp_max = 100;
 
-	public int enemy_atk = 10;
+	public int atk = 10;
 
 	// Start is called before the first frame update
 	void Start()

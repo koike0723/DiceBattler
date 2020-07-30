@@ -26,7 +26,8 @@ public class NoticeDiceNum : MonoBehaviour
 	[SerializeField]
 	private int frame_cnt_line_2 = 90;
 	//サイコロの面番号
-	private int face_element_num = 0;
+	[System.NonSerialized]
+	public int face_element_num = 0;
 
 	private bool is_stop = default;
 
