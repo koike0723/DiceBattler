@@ -18,6 +18,7 @@ TagManager:
   - AreaCircle
   - PartyHP
   - NoticeDice
+  - PlayerDice
   layers:
   - Default
   - TransparentFX

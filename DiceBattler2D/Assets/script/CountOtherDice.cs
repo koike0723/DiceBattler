@@ -32,15 +32,7 @@ public class CountOtherDice: MonoBehaviour
 			var status = clone.GetComponent<DiceStatus>();
 			if (status.GetElementVal() == _diceStatus.GetElementVal())
 			{
-				var contact = clone.GetComponent<ContactDice>();
-				if (!contact.is_contact)
-				{
-					m_OtherDice.Add(clone);
-				}
-				else
-				{
-					clone.GetComponent<PlayOtherDiceEffect>().PlayHexShield();
-				}
+				m_OtherDice.Add(clone);
 			}
 		}
 		other_dice_count = m_OtherDice.Count;
@@ -52,7 +44,16 @@ public class CountOtherDice: MonoBehaviour
 	{ 
 		foreach(var dice in m_OtherDice)
 		{
-			dice.GetComponent<PlayOtherDiceEffect>().PlayLightBall();
+			var contact = dice.GetComponent<ContactDice>();
+			if(!contact.is_contact)
+			{
+				dice.GetComponent<PlayOtherDiceEffect>().PlayLightBall();
+			}
+			else
+			{
+				dice.GetComponent<PlayOtherDiceEffect>().PlayHexShield();
+				other_dice_count--;
+			}
 		}
 		m_OtherDice.Clear();
 	}

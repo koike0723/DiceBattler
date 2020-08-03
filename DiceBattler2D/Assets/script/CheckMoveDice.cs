@@ -27,7 +27,7 @@ public class CheckMoveDice : MonoBehaviour
 
     private void OnEnable()
     {
-        _PlayerDice = GameObject.FindGameObjectWithTag("Player");
+        _PlayerDice = GameObject.FindGameObjectWithTag("PlayerDice");
     }
 
     // Update is called once per frame

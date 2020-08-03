@@ -27,7 +27,7 @@ public class AreaCircle : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-		_PlayerDice = transform.parent.gameObject;
+		_PlayerDice = GameObject.FindGameObjectWithTag("PlayerDice");
 		_rigidbody2D = _PlayerDice.GetComponent<Rigidbody2D>();
 		_diceStatus = _PlayerDice.GetComponent<DiceStatus>();
 		is_played = false;

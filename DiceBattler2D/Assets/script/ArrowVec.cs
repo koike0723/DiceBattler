@@ -16,8 +16,8 @@ public class ArrowVec : MonoBehaviour
     void Start()
     {
         //playerdiceが生成後にcomponent取得を行いたいためstartで処理
-        _PlayerDice = GameObject.FindGameObjectWithTag("Player");
-        _throwDice = _PlayerDice.GetComponent<ThrowDice>();
+        _PlayerDice = GameObject.FindGameObjectWithTag("PlayerDice");
+        _throwDice = _PlayerDice.transform.GetComponent<ThrowDice>();
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class ArrowVec : MonoBehaviour
 
     public void ResetPlayerDice()
     {
-        _PlayerDice = GameObject.FindGameObjectWithTag("Player");
+        _PlayerDice = GameObject.FindGameObjectWithTag("PlayerDice");
         _throwDice = _PlayerDice.GetComponent<ThrowDice>();
     }
 }

@@ -9,8 +9,6 @@ public class AtackPlayer : MonoBehaviour
 	private GameObject _DamageEffectParticle = default;
 	private EnemyStatus _enemyStatus = default;
 
-	private Rigidbody2D _rigidbody2D = default;
-
 	private AreaCircle _areaCircle = default;
 	private DiceStatus _diceStatus = default;
 
@@ -20,9 +18,8 @@ public class AtackPlayer : MonoBehaviour
 		_Enemy = GameObject.FindGameObjectWithTag("Enemy");
 
 		_enemyStatus = _Enemy.GetComponent<EnemyStatus>();
-		_rigidbody2D = GetComponent<Rigidbody2D>();
-		_areaCircle = transform.parent.transform.Find("area_circle").gameObject.GetComponent<AreaCircle>();
-		_diceStatus = GetComponent<DiceStatus>();
+		_areaCircle = transform.Find("area_circle").gameObject.GetComponent<AreaCircle>();
+		_diceStatus = transform.Find("dice").GetComponent<DiceStatus>();
 
 	}
 
