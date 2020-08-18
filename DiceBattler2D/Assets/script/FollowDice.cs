@@ -11,7 +11,7 @@ public class FollowDice : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _PlayerDice = GameObject.FindGameObjectWithTag("PlayerDice");
+        _PlayerDice = transform.parent.transform.Find("dice").gameObject;
         _playerDiceTransform = _PlayerDice.transform;
     }
 

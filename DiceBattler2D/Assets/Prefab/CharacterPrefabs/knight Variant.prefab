@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1972736979415672063, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: dice_hp
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972736979415672063, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: hp_max
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 2816251487189258611, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -86,7 +96,7 @@ PrefabInstance:
     - target: {fileID: 6935834822098742048, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
       propertyPath: m_Name
-      value: knight
+      value: knight Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 711ab3cfb6a99864aae9ee4dfc59f72a, type: 3}

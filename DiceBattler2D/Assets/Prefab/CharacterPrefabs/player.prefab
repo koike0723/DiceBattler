@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 5659363170957805708}
   - component: {fileID: 5068132607829854740}
   - component: {fileID: 1446281261639438892}
-  - component: {fileID: 3290784150441969678}
   m_Layer: 0
   m_Name: dice
   m_TagString: PlayerDice
@@ -251,7 +250,7 @@ MonoBehaviour:
   angle_limit_left: 150
   min_pow: 60
   max_pow: 120
-  pow_up_val: 1
+  pow_up_val: 5
 --- !u!114 &1972736979415672063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,8 +312,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   high_verocity_val: 5
   low_verocity_val: 0.005
-  frame_num_high: 10
-  frame_num_low: 70
+  frame_num_high: 3
+  frame_num_low: 20
 --- !u!114 &5659363170957805700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,27 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac57b5e9791e7d439a773563d0ae81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &3290784150441969678
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5659363170957805701}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 2
-  m_AngularDrag: 3
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 2
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!1 &6517149287903188252
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2816251487189258611}
   - component: {fileID: 6698417375921192095}
+  - component: {fileID: 8969865228244542294}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -533,3 +512,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _DamageEffectParticle: {fileID: 8163213724206723526, guid: 1514037897599a24cb4afd73921c3689,
     type: 3}
+--- !u!50 &8969865228244542294
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6935834822098742048}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 2
+  m_AngularDrag: 3
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 2
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 0

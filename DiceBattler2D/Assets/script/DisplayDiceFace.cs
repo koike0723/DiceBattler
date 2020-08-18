@@ -33,7 +33,7 @@ public class DisplayDiceFace : MonoBehaviour
 	private void Awake()
 	{
 		_diceStatus = GetComponent<DiceStatus>();
-		_rigdbody2D = GetComponent<Rigidbody2D>();
+		_rigdbody2D = transform.parent.GetComponent<Rigidbody2D>();
 	}
 
 	// Start is called before the first frame update

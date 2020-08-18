@@ -27,6 +27,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1972736979415672063, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: atk
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972736979415672063, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: dice_hp
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972736979415672063, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: hp_max
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 2816251487189258611, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -118,5 +133,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1446281261639438892, guid: 711ab3cfb6a99864aae9ee4dfc59f72a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 711ab3cfb6a99864aae9ee4dfc59f72a, type: 3}

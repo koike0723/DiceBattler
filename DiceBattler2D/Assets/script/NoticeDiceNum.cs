@@ -75,14 +75,14 @@ public class NoticeDiceNum : MonoBehaviour
 				face_element_num = (int)CurveWaighteRandom(curve_face);
 			}
 		}
-		else if (frame_cnt < frame_cnt_line_2)
+		else if (frame_cnt < frame_cnt_line_1 + frame_cnt_line_2)
 		{
 			if (frame_cnt % frame_num_low == 0)
 			{
 				face_element_num = (int)CurveWaighteRandom(curve_face);
 			}
 		}
-		else if (frame_cnt >= frame_cnt_line_2)
+		else if (frame_cnt >= frame_cnt_line_1 + frame_cnt_line_2)
 		{
 			frame_cnt = 0;
 			is_stop = true;

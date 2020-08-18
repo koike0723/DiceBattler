@@ -80,7 +80,7 @@ public class ThrowDice : MonoBehaviour
 		//各種コンポーネント取得
 		_AreaCircle = transform.parent.transform.Find("area_circle").gameObject;
 		_transform = GetComponent<Transform>();
-		_rigidbody2D = GetComponent<Rigidbody2D>();
+		_rigidbody2D = transform.parent.GetComponent<Rigidbody2D>();
 		_collider2D = GetComponent<Collider2D>();
 		_checkThrowing = GetComponent<CheckThrowingDice>();
 		//初期化用位置に現在値を入れる

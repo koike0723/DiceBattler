@@ -185,8 +185,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   high_verocity_val: 5
   low_verocity_val: 0.01
-  frame_num_high: 10
-  frame_num_low: 70
+  frame_num_high: 3
+  frame_num_low: 20
 --- !u!114 &-5487700820625500060
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class AreaCircle : MonoBehaviour
 {
-	private GameObject _PlayerDice = default;
+	private GameObject _Player = default;
+	private GameObject _Dice = default;
 	private Rigidbody2D _rigidbody2D = default;
 	private DiceStatus _diceStatus = default;
 	public int del_dice_num = 0;
@@ -27,9 +28,10 @@ public class AreaCircle : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-		_PlayerDice = GameObject.FindGameObjectWithTag("PlayerDice");
-		_rigidbody2D = _PlayerDice.GetComponent<Rigidbody2D>();
-		_diceStatus = _PlayerDice.GetComponent<DiceStatus>();
+		_Player = transform.parent.gameObject;
+		_Dice = _Player.transform.Find("dice").gameObject;
+		_rigidbody2D = _Player.GetComponent<Rigidbody2D>();
+		_diceStatus = _Dice.GetComponent<DiceStatus>();
 		is_played = false;
 
 		_BatleStateMachine = GameObject.FindGameObjectWithTag("BattleStateMachine");

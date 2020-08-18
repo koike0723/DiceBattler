@@ -45,6 +45,6 @@ public class AtackEnemy : MonoBehaviour
     public int CalcDamage()
     {
 
-        return (_countOtherDice.other_dice_count * _enemyStatus.atk) + (_enemyStatus.atk * _noticeDiceStatus.GetElementVal());
+        return (_countOtherDice.other_dice_count * _enemyStatus.atk * 10) + (_enemyStatus.atk * _noticeDiceStatus.GetElementVal());
     }
 }
