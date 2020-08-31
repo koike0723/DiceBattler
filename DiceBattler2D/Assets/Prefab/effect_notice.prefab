@@ -143,8 +143,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  frame_num_high: 3
-  frame_num_low: 20
+  frame_num_high: 5
+  frame_num_low: 15
   frame_cnt_line_1: 90
   frame_cnt_line_2: 60
   variavle_name: is_stop_notice

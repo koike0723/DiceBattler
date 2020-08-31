@@ -23,7 +23,7 @@ public class ThrowDice : MonoBehaviour
 	}
 	//スワイプ判定の基準値
 	[SerializeField]
-	private float move_val = 30.0f;
+	private float swaip_val = 30.0f;
 	//投擲方向右限界値
 	[SerializeField]
 	private float angle_limit_right = 30.0f;
@@ -183,7 +183,7 @@ public class ThrowDice : MonoBehaviour
 		}
 		else
 		{
-			if (Mathf.Abs(dir_x) < move_val && Mathf.Abs(dir_y) < move_val)
+			if (Mathf.Abs(dir_x) < swaip_val && Mathf.Abs(dir_y) < swaip_val)
 			{
 				ResetDice();
 			}
@@ -241,9 +241,9 @@ public class ThrowDice : MonoBehaviour
 	}
 	
 	//フィールド内に入る時自身のtrigger判定を解除
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnTriggerExit2D(Collider2D collision)
 	{
-		if (collision.CompareTag("in_field"))
+		if (collision.CompareTag("FieldWall"))
 		{
 			_collider2D.isTrigger = false;
 		}

@@ -118,10 +118,35 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5659363170957805706, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: max_pow
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659363170957805706, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: min_pow
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6935834822098742048, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
       propertyPath: m_Name
       value: wizard Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969865228244542294, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969865228244542294, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969865228244542294, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8997110146829252648, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}

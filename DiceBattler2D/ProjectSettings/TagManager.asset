@@ -19,6 +19,7 @@ TagManager:
   - PartyHP
   - NoticeDice
   - PlayerDice
+  - FieldWall
   layers:
   - Default
   - TransparentFX

@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FPSControll : MonoBehaviour
 {
 
+    [SerializeField]
+    int frame_par_second = 30;
+
+    [SerializeField]
+    Text text;
+    
     // 変数
     int frameCount;
     float prevTime;
@@ -13,7 +20,7 @@ public class FPSControll : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = frame_par_second;
     }
 
     // Start is called before the first frame update
@@ -37,7 +44,8 @@ public class FPSControll : MonoBehaviour
         if (time >= 0.5f)
         {
             fps = frameCount / time;
-            Debug.Log(fps);
+            text.text = "" + (int)fps;
+            //Debug.Log(fps);
 
             frameCount = 0;
             prevTime = Time.realtimeSinceStartup;

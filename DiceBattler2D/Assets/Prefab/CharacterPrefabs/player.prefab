@@ -250,7 +250,7 @@ MonoBehaviour:
   angle_limit_left: 150
   min_pow: 60
   max_pow: 120
-  pow_up_val: 5
+  pow_up_val: 3
 --- !u!114 &1972736979415672063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,8 +312,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   high_verocity_val: 5
   low_verocity_val: 0.005
-  frame_num_high: 3
-  frame_num_low: 20
+  frame_num_high: 5
+  frame_num_low: 15
 --- !u!114 &5659363170957805700
 MonoBehaviour:
   m_ObjectHideFlags: 0
