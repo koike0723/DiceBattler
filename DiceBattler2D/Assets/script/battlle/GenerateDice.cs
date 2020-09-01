@@ -27,6 +27,7 @@ public class GenerateDice : MonoBehaviour
 
 	private void OnEnable()
 	{
+		ResetContact();
 		Generate(set_dice_max);
 		Throw();
 	}
@@ -35,6 +36,20 @@ public class GenerateDice : MonoBehaviour
 	void Update()
     {
     }
+
+	private void ResetContact()
+	{
+		var o_dice = GameObject.FindGameObjectsWithTag("other_dice");
+		foreach(var dice in o_dice)
+		{
+			var contact = dice.GetComponent<ContactDice>();
+			if (contact.is_contact)
+			{
+				contact.is_contact = false;
+			}
+		}
+
+	}
 
 	public void Generate(int dice_num)
 	{

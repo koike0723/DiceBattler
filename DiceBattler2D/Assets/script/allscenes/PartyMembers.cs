@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PartyMembers : MonoBehaviour
 {
+    public static PartyMembers singleton;
+
 
     private const int member_num = 3;
 
@@ -13,12 +15,21 @@ public class PartyMembers : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        if (singleton == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            singleton = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         //for(int i = 0; i < member_num; i++)
         // {
         //     party_member[i] = i;
         // }
-        party_member[0] = 1;
-        party_member[1] = 2;
+        party_member[0] = 3;
+        party_member[1] = 4;
         party_member[2] = 0;
     }
 
@@ -36,5 +47,10 @@ public class PartyMembers : MonoBehaviour
     public int GetPartyLength()
     {
         return party_member.Length;
+    }
+
+    public void SetMemeber(int num, int charaID)
+    {
+        party_member[num] = charaID; 
     }
 }

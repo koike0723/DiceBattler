@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1972736979415672063, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
       propertyPath: atk
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1972736979415672063, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
@@ -101,17 +101,17 @@ PrefabInstance:
     - target: {fileID: 5659363170957805706, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
       propertyPath: max_pow
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5659363170957805706, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
       propertyPath: min_pow
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5659363170957805706, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
       propertyPath: pow_up_val
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6935834822098742048, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
@@ -121,12 +121,12 @@ PrefabInstance:
     - target: {fileID: 8969865228244542294, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
       propertyPath: m_Mass
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8969865228244542294, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
       propertyPath: m_LinearDrag
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8969865228244542294, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}

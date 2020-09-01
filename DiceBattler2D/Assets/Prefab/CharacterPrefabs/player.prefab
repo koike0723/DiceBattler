@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8997110146829252648}
   - component: {fileID: 2958876823960998796}
-  - component: {fileID: 330650210456722845}
   - component: {fileID: 649236330112595485}
   - component: {fileID: 4983111260688373291}
+  - component: {fileID: 7800360922971476761}
   m_Layer: 0
   m_Name: area_circle
   m_TagString: AreaCircle
@@ -84,22 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &330650210456722845
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354524528783943058}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3.2
 --- !u!114 &649236330112595485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +112,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e1b248d02fa5b48ba1ea76e952d51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &7800360922971476761
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354524528783943058}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.2
 --- !u!1 &5659363170957805701
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 4131385740500373724}
   - component: {fileID: 5659363170957805700}
   - component: {fileID: 5659363170957805708}
-  - component: {fileID: 5068132607829854740}
   - component: {fileID: 1446281261639438892}
   m_Layer: 0
   m_Name: dice
@@ -245,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645f1f87e3a619947843b093a61b608b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_val: 30
+  swaip_val: 30
   angle_limit_right: 30
   angle_limit_left: 150
   min_pow: 60
@@ -343,18 +342,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   variavle_name: is_moving
---- !u!114 &5068132607829854740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5659363170957805701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 167f7bda76fb0584d821de3b24973135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1446281261639438892
 MonoBehaviour:
   m_ObjectHideFlags: 0

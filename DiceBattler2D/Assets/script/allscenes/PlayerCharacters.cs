@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerCharacters : MonoBehaviour
 {
-    
-    private const int all_chara_num = 3;
+
+    private const int all_chara_num = 5;
+
     [SerializeField]
     private GameObject[] m_CharacterPrefabs = new GameObject[all_chara_num];
     [SerializeField]

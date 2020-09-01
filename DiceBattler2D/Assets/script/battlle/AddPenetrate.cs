@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuffStateDice : MonoBehaviour
+public class AddPenetrate : MonoBehaviour
 {
     private bool is_penetrat = default;
 
@@ -10,12 +10,23 @@ public class BuffStateDice : MonoBehaviour
     void Start()
     {
         is_penetrat = false;
+        
+    }
+
+    private void OnEnable()
+    {
+        AddPenetration();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
+    private void OnDestroy()
+    {
+        DelPenetration();
     }
 
     public void AddPenetration()

@@ -18,7 +18,10 @@ public class ContactDice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!is_contact)
+        {
+            GetComponent<SpriteRenderer>().color = new Color32(250, 207, 159, 255);
+        }
     }
 
 	

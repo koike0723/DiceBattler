@@ -78,6 +78,7 @@ public class DisplayDiceFace : MonoBehaviour
 		{
 			frame_cnt = 0;
 			_rigdbody2D.velocity = Vector2.zero;
+			_rigdbody2D.rotation = _rigdbody2D.rotation;
 		}
 
 		return face_element_num;

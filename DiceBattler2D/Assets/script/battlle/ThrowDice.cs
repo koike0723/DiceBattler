@@ -74,7 +74,7 @@ public class ThrowDice : MonoBehaviour
 	private Collider2D _collider2D = default;
 	private CheckThrowingDice _checkThrowing = default;
 
-
+	private AddPenetrate _addPenetrate = default;
 	private void Awake()
 	{
 		//各種コンポーネント取得
@@ -83,6 +83,12 @@ public class ThrowDice : MonoBehaviour
 		_rigidbody2D = transform.parent.GetComponent<Rigidbody2D>();
 		_collider2D = GetComponent<Collider2D>();
 		_checkThrowing = GetComponent<CheckThrowingDice>();
+
+		//キャラがシーフの時
+		if(transform.parent.gameObject.name == "thief Variant(Clone)")
+		{
+			_addPenetrate = GetComponent<AddPenetrate>();
+		}
 		//初期化用位置に現在値を入れる
 		init_pos = _transform.position;
 		//投擲パワーを最低値に
@@ -97,6 +103,10 @@ public class ThrowDice : MonoBehaviour
 	{
 		//フリック処理(スクリプト有効化時クリック位置取得)
 		Flick();
+		if(_addPenetrate != null)
+		{
+			_addPenetrate.enabled = true;
+		}
 	}
 
 	// Update is called once per frame

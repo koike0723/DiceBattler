@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7516243285520999388}
   m_Layer: 0
   m_Name: player_character_container
-  m_TagString: Untagged
+  m_TagString: PlayerCharaContainer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,10 +44,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CharacterPrefabs:
-  - {fileID: 8612341077017535600, guid: be36e4a2c0138194a8722c589d150ed0, type: 3}
-  - {fileID: 956953120121327229, guid: 4b196b3f7d749f349a7f6e58857d884c, type: 3}
-  - {fileID: 4612881576180419977, guid: d389d9c854ab0214faf80f3440f677e2, type: 3}
-  m_CharacterImages:
+  - {fileID: 6593088267331970181, guid: b321bbf19fdff6147a6fc88e8ffaaa2f, type: 3}
+  - {fileID: 2374303306346851597, guid: bdcf7f6f7f0538340bac81a404b180b7, type: 3}
+  - {fileID: 5757947361787350960, guid: 50409138f69305c4cbec120186a41111, type: 3}
+  - {fileID: 6485558254870122024, guid: 84f1a010698252842809734c40499ffe, type: 3}
+  - {fileID: 3709218067805100377, guid: 64eedfa9a9bd8294ea1f71ceab6a0af3, type: 3}
+  m_characterImages:
   - {fileID: 21300000, guid: 00729cfd1fa122349b48e5816dda1666, type: 3}
   - {fileID: 21300000, guid: 014a6b42b2ba0f0479332ee69c32993d, type: 3}
   - {fileID: 21300000, guid: 38600c261a0fa064489acddab3fd61ee, type: 3}
+  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 21300000, guid: 6010cee7f94651d4bbf897cd95cbc8b1, type: 3}
