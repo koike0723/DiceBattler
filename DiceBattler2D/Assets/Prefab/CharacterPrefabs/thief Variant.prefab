@@ -19,6 +19,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 258952551725381227, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 258952551725381227, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 1972736979415672063, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}
       propertyPath: dice_hp
@@ -83,6 +93,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886334848189784432, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8017544016425631593, guid: 41e5e815dca5df7428f4c77a2036f932,
+        type: 3}
+    - target: {fileID: 4886334848189784432, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886334848189784432, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886334848189784432, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5659363170957805706, guid: 711ab3cfb6a99864aae9ee4dfc59f72a,
         type: 3}

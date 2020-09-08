@@ -50,8 +50,14 @@ MonoBehaviour:
   - {fileID: 6485558254870122024, guid: 84f1a010698252842809734c40499ffe, type: 3}
   - {fileID: 3709218067805100377, guid: 64eedfa9a9bd8294ea1f71ceab6a0af3, type: 3}
   m_characterImages:
-  - {fileID: 21300000, guid: 00729cfd1fa122349b48e5816dda1666, type: 3}
-  - {fileID: 21300000, guid: 014a6b42b2ba0f0479332ee69c32993d, type: 3}
-  - {fileID: 21300000, guid: 38600c261a0fa064489acddab3fd61ee, type: 3}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 21300000, guid: 6010cee7f94651d4bbf897cd95cbc8b1, type: 3}
+  - {fileID: 21300000, guid: 86c78a3cc27917b4d9cf4c033a0fc405, type: 3}
+  - {fileID: 21300000, guid: 202b564fb396d9b40a6057e6a8cb63f9, type: 3}
+  - {fileID: 21300000, guid: 1f9c24daad2f4f741befe37d39210b01, type: 3}
+  - {fileID: 21300000, guid: 74b675feb6659674580faf5dc4c9b617, type: 3}
+  - {fileID: 21300000, guid: 79874a177de7a2f4897a60f5681804ec, type: 3}
+  m_standImages:
+  - {fileID: 21300000, guid: 6a70984d9488be347ab4423207e47e6d, type: 3}
+  - {fileID: 21300000, guid: d1fcef644c870874c9411045676cadae, type: 3}
+  - {fileID: 21300000, guid: 7f4606f3fa408134fb7acb3ebbd18f36, type: 3}
+  - {fileID: 21300000, guid: 092db84a54abd7d4ba2388ac88cc0c1d, type: 3}
+  - {fileID: 21300000, guid: 9ab26c21520daab46969dec7b1dfb5cd, type: 3}
