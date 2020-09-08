@@ -11,7 +11,7 @@ public class DispStandImage : MonoBehaviour
     private SpriteRenderer _spriteRenderer = default;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _PlayerCharactorContainer = GameObject.FindGameObjectWithTag("PlayerCharaContainer");
         _playerCharacters = _PlayerCharactorContainer.GetComponent<PlayerCharacters>();
