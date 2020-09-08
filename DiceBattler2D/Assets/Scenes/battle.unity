@@ -278,6 +278,16 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.width
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6326937808904193459, guid: 2e3df0557efc4ef46aad8e767e110c52,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.00035086274
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326937808904193459, guid: 2e3df0557efc4ef46aad8e767e110c52,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.9992983
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e3df0557efc4ef46aad8e767e110c52, type: 3}
 --- !u!224 &171124796 stripped
@@ -7294,7 +7304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previewOnGUI: 1
   enableGUILayout: 1
-  drawStateLabels: 0
+  drawStateLabels: 1
   enableStateLabelsInBuilds: 0
   GUITextureStateLabels: 0
   GUITextStateLabels: 0
@@ -8572,6 +8582,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4193916783553956872, guid: 64c0423109801324fb31f5a656061a5f,
+        type: 3}
+      propertyPath: curve_pow.m_Curve.Array.data[1].inSlope
+      value: 36.992054
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193916783553956872, guid: 64c0423109801324fb31f5a656061a5f,
+        type: 3}
+      propertyPath: curve_pow.m_Curve.Array.data[1].outSlope
+      value: 36.992054
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193916783553956872, guid: 64c0423109801324fb31f5a656061a5f,
+        type: 3}
+      propertyPath: curve_pow.m_Curve.Array.data[2].value
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193916783553956872, guid: 64c0423109801324fb31f5a656061a5f,
+        type: 3}
+      propertyPath: curve_pow.m_Curve.Array.data[0].inSlope
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193916783553956872, guid: 64c0423109801324fb31f5a656061a5f,
+        type: 3}
+      propertyPath: curve_pow.m_Curve.Array.data[0].outSlope
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193916783553956872, guid: 64c0423109801324fb31f5a656061a5f,
+        type: 3}
+      propertyPath: curve_pow.m_Curve.Array.data[1].value
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193916783553956872, guid: 64c0423109801324fb31f5a656061a5f,
+        type: 3}
+      propertyPath: curve_pow.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193916783553956872, guid: 64c0423109801324fb31f5a656061a5f,
+        type: 3}
+      propertyPath: curve_pow.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193916783553956872, guid: 64c0423109801324fb31f5a656061a5f,
+        type: 3}
+      propertyPath: curve_pow.m_Curve.Array.data[1].outWeight
+      value: 0.48685086
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193916783553956872, guid: 64c0423109801324fb31f5a656061a5f,
+        type: 3}
+      propertyPath: curve_pow.m_Curve.Array.data[1].inWeight
+      value: 0.20821217
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193916783553956872, guid: 64c0423109801324fb31f5a656061a5f,
+        type: 3}
+      propertyPath: set_dice_max
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4514218282930827284, guid: 64c0423109801324fb31f5a656061a5f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9058,7 +9123,7 @@ RectTransform:
   m_GameObject: {fileID: 2095757111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.24722221, y: 0.24722221, z: 0.24722221}
   m_Children:
   - {fileID: 804918689}
   - {fileID: 238623067}

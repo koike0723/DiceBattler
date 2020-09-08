@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 4076229612441697776}
   - component: {fileID: 4193916783553956872}
   - component: {fileID: 4193916783553956873}
+  - component: {fileID: 4636895685523730785}
   m_Layer: 0
   m_Name: other_dice_manager
   m_TagString: in_field
@@ -315,6 +316,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   variavle_name: is_odice_stop
+--- !u!114 &4636895685523730785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4193916783553956877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3985db4fa7990534c9542ebee829547f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other_dice_count: 0
 --- !u!1 &5143963572094049649
 GameObject:
   m_ObjectHideFlags: 0

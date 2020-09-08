@@ -7,7 +7,6 @@ public class GenerateDice : MonoBehaviour
 	[SerializeField]
 	private GameObject _other_dice_prefab = default;
 
-	private CountOtherDice _count = default;
 
 	public AnimationCurve curve_x = default;
 	public AnimationCurve curve_y = default;
@@ -19,16 +18,14 @@ public class GenerateDice : MonoBehaviour
 	private int other_dice_num = 0;
 
 	// Start is called before the first frame update
-	void Start()
+	void Awake()
     {
-		_count = GetComponent<CountOtherDice>();
-		
 	}
 
 	private void OnEnable()
 	{
 		ResetContact();
-		Generate(set_dice_max);
+		Generate(set_dice_max - Count());
 		Throw();
 	}
 
@@ -63,7 +60,6 @@ public class GenerateDice : MonoBehaviour
 			other_dice_pos = new Vector3(x_pos, y_pos, 0);
 			Instantiate(_other_dice_prefab, other_dice_pos, Quaternion.identity);
 		}
-		other_dice_num = set_dice_max;
 	}
 
 	public void Throw()
@@ -80,6 +76,16 @@ public class GenerateDice : MonoBehaviour
 			throw_pow = CurveWaighteRandom(curve_pow);
 			clone.GetComponent<Rigidbody2D>().AddForce(dir.normalized * throw_pow, ForceMode2D.Impulse);
 		}
+	}
+
+	private int Count()
+	{
+		var clones = GameObject.FindGameObjectsWithTag("other_dice");
+		foreach (var clone in clones)
+		{
+			other_dice_num++;
+		}
+			return other_dice_num;
 	}
 
 	public void Delete()
