@@ -13,7 +13,9 @@ public class PlayerCharacters : MonoBehaviour
     private Sprite[] m_characterImages = new Sprite[all_chara_num];
     [SerializeField]
     private Sprite[] m_standImages = new Sprite[all_chara_num];
-    private DiceStatus[] m_diceStatuses = new DiceStatus[all_chara_num];
+	[SerializeField]
+	private Sprite[] m_explanation = new Sprite[all_chara_num];
+	private DiceStatus[] m_diceStatuses = new DiceStatus[all_chara_num];
 
     // Start is called before the first frame update
     void Awake()
@@ -48,6 +50,11 @@ public class PlayerCharacters : MonoBehaviour
     {
         return m_standImages[chara_num];
     }
+
+	public Sprite GetExplanation(int chara_ID)
+	{
+		return m_explanation[chara_ID];
+	}
 
     //キャラクターの性能を取得
     public DiceStatus GetCharacterStatus(int chara_num)

@@ -28,9 +28,9 @@ public class PartyMembers : MonoBehaviour
         // {
         //     party_member[i] = i;
         // }
-        party_member[0] = 3;
-        party_member[1] = 4;
-        party_member[2] = 0;
+        party_member[0] = 0;
+        party_member[1] = 1;
+        party_member[2] = 2;
     }
 
     // Update is called once per frame

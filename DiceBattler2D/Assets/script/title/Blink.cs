@@ -57,4 +57,9 @@ public class Blink : MonoBehaviour
 
         return color;
     }
+
+	public void SpeedUp()
+	{
+		speed = 10;
+	}
 }

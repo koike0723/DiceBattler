@@ -42,7 +42,13 @@ public class AtackEnemy : MonoBehaviour
         Instantiate(_DamageEffectParticle);
     }
 
-    public int CalcDamage()
+	public void AtackEnemyToPlayer(int dmg)
+	{
+		_managePlayerHP.DamagePlayerChara(dmg);
+		Instantiate(_DamageEffectParticle);
+	}
+
+	public int CalcDamage()
     {
 
         return (_countOtherDice.other_dice_count * _enemyStatus.atk * 10) + (_enemyStatus.atk * _noticeDiceStatus.GetElementVal());

@@ -48,4 +48,9 @@ public class ManagePlayerHP : MonoBehaviour
 	{
 		party_hp -= damage;
 	}
+
+	public int GetHP()
+	{
+		return party_hp;
+	}
 }

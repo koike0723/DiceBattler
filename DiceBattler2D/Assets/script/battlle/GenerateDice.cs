@@ -80,6 +80,7 @@ public class GenerateDice : MonoBehaviour
 
 	private int Count()
 	{
+		other_dice_num = 0;
 		var clones = GameObject.FindGameObjectsWithTag("other_dice");
 		foreach (var clone in clones)
 		{
